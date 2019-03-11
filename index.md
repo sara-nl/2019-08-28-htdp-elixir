@@ -1,6 +1,6 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
-{% comment %} carpentry: "FIXME"    # what kind of Carpentry (must be either "lc" or "dc" or "swc").  {% endcomment%}
+carpentry: "swc"    # what kind of Carpentry (must be either "lc" or "dc" or "swc").
                       # Be sure to update the Carpentry type in _config.yml as well.  
 venue: "SURF Utrecht"        # brief name of host site without address (e.g., "Euphoric State University")
 address: "Kantoren Hoog Overborch (Hoog Catharijne), Moreelsepark 48, 3511 EP Utrecht"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
