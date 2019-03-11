@@ -72,8 +72,9 @@ displayed if the 'eventbrite' field in the header is not set.
 
 <h2 id="general">General Information</h2>
 
-
+{% comment %}
 INTRODUCTION
+{% endcomment %}
 
 The first part (1st day, morning) of the course focuses on making you ‘feel at home’ with the Linux system, present in many of the current compute clusters and the largest supercomputers in the world. You will learn:
 
@@ -100,22 +101,28 @@ The following parts (2nd day) will focus on the creation of life sciences pipeli
 {% include lc/intro.html %}
 {% endif %}
 
-
+{% comment %}
 AUDIENCE
+{% endcomment %}
 
-Any person who would like to know how to use a supercomputer for running life sciences applications.
+<p id="who">
+  <strong>Who:</strong>
+  The course is aimed at graduate students and other researchers, particularly from life sciences, who would like to know how to use a supercomputer.
+  <strong>
+    You don't need to have any previous knowledge of the tools
+    that will be presented at the workshop.
+  </strong>
+</p>
 
-No special previous knowledge or prerequisites are necessary for attending this course.
-
-{% if page.carpentry == "swc" %}
-{% include sc/who.html %}
-{% elsif page.carpentry == "dc" %}
+{% if page.carpentry == "dc" %}
 {% include dc/who.html %}
 {% elsif page.carpentry == "lc" %}
 {% include lc/who.html %}
 {% endif %}
 
+{% comment %}
 LOCATION
+{% endcomment %}
 
 {% if page.latlng %}
 <p id="where">
@@ -129,7 +136,9 @@ LOCATION
 </p>
 {% endif %}
 
+{% comment %}
 DATE
+{% endcomment %}
 
 {% if page.humandate %}
 <p id="when">
