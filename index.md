@@ -12,7 +12,7 @@ humantime: "9:00 am - 17:00 pm"    # human-readable times for the workshop (e.g.
 startdate: 2019-04-23      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2019-04-24        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 instructor: ["Carlos Teijeiro Barjas"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["FIXME"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+helper: ["(to be confirmed)"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["mateusz.kuzak@dtls.nl","carlos.teijeiro@surfsara.nl"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:             # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
@@ -33,7 +33,6 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 
 {% comment %}
 For a workshop please delete the following block
-{% endcomment %}
 <div class="alert alert-danger">
 This is the workshop template. Delete these lines and use it to customize your
 own website. If you are running a self-organized workshop or have not put in a
@@ -42,6 +41,7 @@ workshop request yet, please also fill in
 about your workshop and our administrator may contact you if we need any extra
 information.
 </div>
+{% endcomment %}
 
 {% if page.carpentry != site.carpentry %}
 <div class="alert alert-warning">
@@ -103,7 +103,7 @@ The following parts (2nd day) will focus on the creation of life sciences pipeli
 
 AUDIENCE
 
-Any member of a partner organization of the ELIXIR project.
+Any person who would like to know how to use a supercomputer for running life sciences applications.
 
 No special previous knowledge or prerequisites are necessary for attending this course.
 
@@ -115,17 +115,12 @@ No special previous knowledge or prerequisites are necessary for attending this 
 {% include lc/who.html %}
 {% endif %}
 
-{% comment %}
 LOCATION
 
-This block displays the address and links to maps showing directions
-if the latitude and longitude of the workshop have been set.  You
-can use https://itouchmap.com/latlong.html to find the lat/long of an
-address.
-{% endcomment %}
 {% if page.latlng %}
 <p id="where">
   <strong>Where:</strong>
+  {{page.venue}}.
   {{page.address}}.
   Get directions with
   <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
@@ -134,11 +129,8 @@ address.
 </p>
 {% endif %}
 
-{% comment %}
 DATE
 
-This block displays the date and links to Google Calendar.
-{% endcomment %}
 {% if page.humandate %}
 <p id="when">
   <strong>When:</strong>
@@ -154,15 +146,15 @@ Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
   <strong>Requirements:</strong> Participants must bring a laptop with a
-  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on. They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) where they can access a terminal console. For Windows, the use of <a href="http://mobaxterm.mobatek.net">MobaXterm</a> is encouraged.
 </p>
 
 {% comment%}
 CODE OF CONDUCT
-{% endcomment %}
 <p id="code-of-conduct">
 <strong>Code of Conduct:</strong>  Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
 </p>
+{% endcomment %}
 
 
 {% comment %}
@@ -218,7 +210,6 @@ Display the contact email address set in the configuration file.
 
 {% comment %} 
 SURVEYS - DO NOT EDIT SURVEY LINKS 
-{% endcomment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
 {% if site.carpentry == "swc" %} 
@@ -233,6 +224,7 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endif %}
 
 <hr/>
+{% endcomment %}
 
 
 {% comment %}
@@ -241,7 +233,7 @@ SCHEDULE
 Show the workshop's schedule.  Edit the items and times in the table
 to match your plans.  You may also want to change 'Day 1' and 'Day
 2' to be actual dates or days of the week.
-{% endcomment %}
+
 <h2 id="schedule">Schedule</h2>
 
 {% if page.carpentry == "swc" %}
@@ -251,6 +243,7 @@ to match your plans.  You may also want to change 'Day 1' and 'Day
 {% elsif page.carpentry == "lc" %}
 {% include lc/schedule.html %}
 {% endif %}
+{% endcomment %}
 
 {% comment %}
 Collaborative Notes
@@ -261,7 +254,6 @@ http://pad.software-carpentry.org/YYYY-MM-DD-site
 
 where 'YYYY-MM-DD-site' is the identifier for your workshop,
 e.g., '2015-06-10-esu'.
-{% endcomment %}
 {% if page.collaborative_notes %}
 <p id="collaborative_notes">
   We will use this <a href="{{page.collaborative_notes}}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
@@ -269,6 +261,7 @@ e.g., '2015-06-10-esu'.
 {% endif %}
 
 <hr/>
+{% endcomment %}
 
 {% comment %}
 SYLLABUS
@@ -286,7 +279,6 @@ the div's with class="row" to balance the multi-column layout.
 This is one of the places where people frequently make mistakes, so
 please preview your site before committing, and make sure to run
 'tools/check' as well.
-{% endcomment %}
 <h2 id="syllabus">Syllabus</h2>
 
 {% if page.carpentry == "swc" %}
@@ -298,6 +290,7 @@ please preview your site before committing, and make sure to run
 {% endif %}
 
 <hr/>
+{% endcomment %}
 
 {% comment %}
 SETUP
@@ -309,7 +302,6 @@ and end easier to find.
 This is the other place where people frequently make mistakes, so
 please preview your site before committing, and make sure to run
 'tools/check' as well.
-{% endcomment %}
 
 <h2 id="setup">Setup</h2>
 
@@ -812,6 +804,7 @@ please preview your site before committing, and make sure to run
     </div>
   </div>
 </div> {% comment %} End of 'OpenRefine' section. {% endcomment %}
+{% endcomment %}
 
 {% comment %}
 <div id="vm">
