@@ -93,9 +93,7 @@ In the second part (1st day, afternoon) we will introduce the concept of a 'comp
 
 The following parts (2nd day) will focus on the creation of life sciences pipelines using Snakemake. Some applied examples will give you the necessary information on how to start working on a supercomputer for the development of pipelines.
 
-{% if page.carpentry == "swc" %}
-{% include sc/intro.html %}
-{% elsif page.carpentry == "dc" %}
+{% if page.carpentry == "dc" %}
 {% include dc/intro.html %}
 {% elsif page.carpentry == "lc" %}
 {% include lc/intro.html %}
