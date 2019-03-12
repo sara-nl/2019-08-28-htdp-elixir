@@ -69,36 +69,21 @@ displayed if the 'eventbrite' field in the header is not set.
 </iframe>
 {% endif %}
 
-
-<h2 id="general">General Information</h2>
-
 {% comment %}
 INTRODUCTION
 {% endcomment %}
 
-The first part (1st day, morning) of the course focuses on making you ‘feel at home’ with the Linux system, present in many of the current compute clusters and the largest supercomputers in the world. You will learn:
+<h2>Sylabus</h2>
+<h3>Day 1</h3>
+<p>The morning will focus on the basics of the Unix shell.
+The Unix shell has been around longer than most of its users have been alive. It has survived so long because it’s a power tool that allows people to do complex things with just a few keystrokes. More importantly, it helps them combine existing programs in new ways and automate repetitive tasks, so they aren’t typing the same things over and over again. Use of the shell is fundamental to using a wide range of other powerful tools and computing resources (including “high-performance computing” supercomputers). These lessons will start you on a path towards using these resources effectively.
+In the afternoon you will put those skills into practice.
+You will learn about compute clusters, how to use them for your computations and what are the best practices for it.</p>
 
-* how find your way around a Linux system
-* how to run commands
-* how to exchange files between your own desktop computer and a Linux cluster
-* manipulate files, and organize your files in directories
-* how to edit text files using a basic text editor.
+<h3>Day 2</h3>
+<p> Second day will focus on using Python in high-performance computing environments to automate data analysis pipelines with <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a> (for a detailed discussion for why we are teaching Snakemake, see this <a href="https://hpc-carpentry.github.io/hpc-python/discuss/">lesson’s discussion page</a>). We’ll start with the basics and cover everything you need to get started. Some elements of writing performance-oriented code will be covered, but it is not the main focus. There is no prerequisite knowlege for this tutorial, although having some prior experience with the command-line or a compute cluster will be very helpful.</p>
 
-In the second part (1st day, afternoon) we will introduce the concept of a 'compute job', and you will run your first jobs on a cluster. We will discuss:
-
-* what compute clusters are
-* how to run simple jobs
-* how to run multiple jobs
-* best practices
-
-The following parts (2nd day) will focus on the creation of life sciences pipelines using Snakemake. Some applied examples will give you the necessary information on how to start working on a supercomputer for the development of pipelines.
-
-{% if page.carpentry == "dc" %}
-{% include dc/intro.html %}
-{% elsif page.carpentry == "lc" %}
-{% include lc/intro.html %}
-{% endif %}
-
+<h2 id="general">General Information</h2>
 {% comment %}
 AUDIENCE
 {% endcomment %}
@@ -152,39 +137,7 @@ Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
   <strong>Requirements:</strong> Participants must bring a laptop with a
-  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) where they can access a terminal console. For Windows, the use of <a href="http://mobaxterm.mobatek.net">MobaXterm</a> is encouraged.
-</p>
-
-{% comment%}
-CODE OF CONDUCT
-<p id="code-of-conduct">
-<strong>Code of Conduct:</strong>  Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
-</p>
-{% endcomment %}
-
-
-{% comment %}
-ACCESSIBILITY
-
-Modify the block below if there are any barriers to accessibility or
-special instructions.
-{% endcomment %}
-<p id="accessibility">
-  <strong>Accessibility:</strong> We are committed to making this workshop
-  accessible to everybody.
-  The workshop organizers have checked that:
-</p>
-<ul>
-  <li>The room is wheelchair / scooter accessible.</li>
-  <li>Accessible restrooms are available.</li>
-</ul>
-<p>
-  Materials will be provided in advance of the workshop and
-  large-print handouts are available if needed by notifying the
-  organizers in advance.  If we can help making learning easier for
-  you (e.g. sign-language interpreters, lactation facilities) please
-  get in touch (using contact details below) and we will
-  attempt to provide them.
+  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.).
 </p>
 
 {% comment %}
