@@ -31,6 +31,9 @@ repository: <USERNAME>/<PROJECT>
 email: "training@surfsara.nl"
 
 # Sites.
+surfsara_site: "https://www.surf.nl/en/about-surf/subsidiaries/surfsara/"
+dtl_site: "https://www.dtls.nl"
+elixir_nl_site: "https://www.dtls.nl/elixir-nl/"
 amy_site: "https://amy.software-carpentry.org/workshops"
 carpentries_github: "https://github.com/carpentries"
 carpentries_pages: "https://carpentries.github.io"
