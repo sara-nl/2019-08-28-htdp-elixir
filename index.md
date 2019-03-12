@@ -212,7 +212,16 @@ Display the contact email address set in the configuration file.
   for more information.
 </p>
 
+
 <hr/>
+
+<h2 id="sponsors">Sponsors</h2>
+<p>This workshop is sponsored and supported by ELIXIR-EXCELERATE. ELIXIR-EXCELERATE is funded by the European Commission within the Research Infrastructures programme of Horizon 2020, grant agreement number 676559.</p>
+<div>
+	<a href="{{ site.excelerate }}" title="EXCELERATE">
+    	<img style="width: 100%" alt="EXCELERATE" src="assets/img/Excelerate_EU-flag.png">
+  	</a>
+</div>
 
 {% comment %} 
 SURVEYS - DO NOT EDIT SURVEY LINKS 
