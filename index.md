@@ -78,7 +78,7 @@ AUDIENCE
 
 <p id="who">
   <strong>Who:</strong>
-  The course is aimed at graduate students and other researchers, particularly from life sciences, who would like to know how a supercomputer can be used to accomplish everyday work.
+  The course is aimed at graduate students and other researchers, particularly from life sciences, who would like to know how a supercomputer can help to accomplish their everyday work.
   <strong>
     You don't need to have any previous knowledge of the tools
     that will be presented at the workshop.
