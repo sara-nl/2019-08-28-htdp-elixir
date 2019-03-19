@@ -251,9 +251,9 @@ please preview your site before committing, and make sure to run
 <h2 id="setup">Setup</h2>
 
 <p>
-  To participate in this workshop,
-  you will need access to the software described below.
-  In addition, you will need an up-to-date web browser.
+  You will be granted access to the SURFsara computing facilities during this workshop.
+  In order to participate, you will need access to the software described below on your laptop,
+  as well as an up-to-date web browser.
 </p>
 
 <div id="shell"> {% comment %} Start of 'shell' section. {% endcomment %}
