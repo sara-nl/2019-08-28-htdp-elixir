@@ -71,6 +71,47 @@ You will learn about compute clusters, how to use them for your computations and
 <h3>Day 2</h3>
 <p> Second day will focus on using Python in high-performance computing environments to automate data analysis pipelines with <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a> (for a detailed discussion for why we are teaching Snakemake, see this <a href="https://hpc-carpentry.github.io/hpc-python/discuss/">lesson’s discussion page</a>). We’ll start with the basics and cover everything you need to get started. Some elements of writing performance-oriented code will be covered, but it is not the main focus. There is no prerequisite knowlege for this tutorial, although having some prior experience with the command-line or a compute cluster will be very helpful.</p>
 
+{% comment %}
+<hr/>
+
+{% comment %}
+  SCHEDULE
+
+  Show the workshop's schedule.  Edit the items and times in the table
+  to match your plans.  You may also want to change 'Day 1' and 'Day
+  2' to be actual dates or days of the week.
+{% endcomment %}
+<h2 id="schedule">Schedule</h2>
+
+{% if page.carpentry == "swc" %}
+  {% include sc/schedule.html %}
+{% elsif page.carpentry == "dc" %}
+  {% include dc/schedule.html %}
+{% elsif page.carpentry == "lc" %}
+  {% include lc/schedule.html %}
+{% elsif page.carpentry == "academy" %}
+  {% include academy/schedule.html %}
+{% endif %}
+
+{% comment %}
+  Collaborative Notes
+
+  If you want to use an Etherpad, go to
+
+      http://pad.software-carpentry.org/YYYY-MM-DD-site
+
+  where 'YYYY-MM-DD-site' is the identifier for your workshop,
+  e.g., '2015-06-10-esu'.
+{% endcomment %}
+{% if page.collaborative_notes %}
+<p id="collaborative_notes">
+  We will use this <a href="{{page.collaborative_notes}}">collaborative document</a> for chatting, taking notes, and sharing URLs and bits of code.
+</p>
+{% endif %}
+
+<hr/>
+{% endcomment %}
+
 <h2 id="general">General Information</h2>
 {% comment %}
 AUDIENCE
