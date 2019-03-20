@@ -71,7 +71,6 @@ You will learn about compute clusters, how to use them for your computations and
 <h3>Day 2</h3>
 <p> Second day will focus on using Python in high-performance computing environments to automate data analysis pipelines with <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a> (for a detailed discussion for why we are teaching Snakemake, see this <a href="https://hpc-carpentry.github.io/hpc-python/discuss/">lesson’s discussion page</a>). We’ll start with the basics and cover everything you need to get started. Some elements of writing performance-oriented code will be covered, but it is not the main focus. There is no prerequisite knowlege for this tutorial, although having some prior experience with the command-line or a compute cluster will be very helpful.</p>
 
-{% comment %}
 <hr/>
 
 {% comment %}
@@ -110,7 +109,6 @@ You will learn about compute clusters, how to use them for your computations and
 {% endif %}
 
 <hr/>
-{% endcomment %}
 
 <h2 id="general">General Information</h2>
 {% comment %}
