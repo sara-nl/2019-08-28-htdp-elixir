@@ -108,7 +108,7 @@ You will learn about compute clusters, how to use them for your computations and
 </p>
 {% endif %}
 
-<hr/>
+</hr>
 
 <h2 id="general">General Information</h2>
 {% comment %}
