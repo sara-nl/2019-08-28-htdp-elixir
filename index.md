@@ -61,17 +61,17 @@ displayed if the 'eventbrite' field in the header is not set.
 INTRODUCTION
 {% endcomment %}
 
-<h2>Downloading sample files</h2>
+<h2>Downloading sample files for Day 1</h2>
 
 <p>Please execute the following commands in the terminal to download the sample files for the 1st day:</p>
-
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_1.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_2.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_1.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fastq.gz</p>
-
+<p/>
+<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz ; gunzip SRR2589044_1.fastq.gz</p>
+<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz ; gunzip SRR2589044_2.fastq.gz</p>
+<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_1.fastq.gz ; gunzip SRR2584863_1.fastq.gz</p>
+<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_2.fastq.gz ; gunzip SRR2584863_2.fastq.gz</p>
+<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_1.fastq.gz ; gunzip SRR2584866_1.fastq.gz</p>
+<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fastq.gz ; gunzip SRR2584866_2.fastq.gz</p>
+<p/>
 
 <h2>Syllabus</h2>
 <h3>Day 1</h3>
