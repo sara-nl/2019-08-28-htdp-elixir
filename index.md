@@ -62,25 +62,6 @@ INTRODUCTION
 {% endcomment %}
 
 {% comment %}
-  SCHEDULE
-
-  Show the workshop's schedule.  Edit the items and times in the table
-  to match your plans.  You may also want to change 'Day 1' and 'Day
-  2' to be actual dates or days of the week.
-{% endcomment %}
-<h2 id="schedule">Schedule</h2>
-
-{% if page.carpentry == "swc" %}
-  {% include sc/schedule.html %}
-{% elsif page.carpentry == "dc" %}
-  {% include dc/schedule.html %}
-{% elsif page.carpentry == "lc" %}
-  {% include lc/schedule.html %}
-{% elsif page.carpentry == "academy" %}
-  {% include academy/schedule.html %}
-{% endif %}
-
-{% comment %}
   Collaborative Notes
 
   If you want to use an Etherpad, go to
@@ -181,6 +162,24 @@ Display the contact email address set in the configuration file.
   for more information.
 </p>
 
+{% comment %}
+  SCHEDULE
+
+  Show the workshop's schedule.  Edit the items and times in the table
+  to match your plans.  You may also want to change 'Day 1' and 'Day
+  2' to be actual dates or days of the week.
+{% endcomment %}
+<h2 id="schedule">Schedule</h2>
+
+{% if page.carpentry == "swc" %}
+  {% include sc/schedule.html %}
+{% elsif page.carpentry == "dc" %}
+  {% include dc/schedule.html %}
+{% elsif page.carpentry == "lc" %}
+  {% include lc/schedule.html %}
+{% elsif page.carpentry == "academy" %}
+  {% include academy/schedule.html %}
+{% endif %}
 
 <hr/>
 
