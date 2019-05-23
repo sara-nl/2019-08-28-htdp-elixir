@@ -83,7 +83,7 @@ INTRODUCTION
 
 Vastly increasing data volumes and data complexity imply that researchers require novel solutions to large scale cluster computing. This workshop aims to provide an introduction and
 hands-on experience with our new solution to this problem: "a new and versatile platform for high-throughput data processing".
-The objective of the workshop is to distinguish the different functionalities of the platform, to provide information on applying for access, and to give participants hands-on experience with basic job processing, software distribution and portability, using internal and external storage systems, and how to collaborate on data analysis within a project. Participants will acquire first hand experience with the flexibility, interactivity and interoperability offered by the Spider platform.
+The objective of the workshop is to distinguish the different functionalities of the platform, to provide information on applying for access, and to give participants hands-on experience with basic job processing, software distribution and portability, using internal and external storage systems, and how to collaborate on data analysis within a project. Participants will acquire first hand experience with the flexibility, interactivity and interoperability offered by the  platform.
 
 {% comment %}
 AUDIENCE
