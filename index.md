@@ -61,30 +61,6 @@ displayed if the 'eventbrite' field in the header is not set.
 INTRODUCTION
 {% endcomment %}
 
-<h2>Downloading sample files for Day 1</h2>
-
-<p>Please execute the following commands in the terminal to download the sample files for the 1st day:</p>
-<p/>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz ; gunzip SRR2589044_1.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz ; gunzip SRR2589044_2.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_1.fastq.gz ; gunzip SRR2584863_1.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_2.fastq.gz ; gunzip SRR2584863_2.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_1.fastq.gz ; gunzip SRR2584866_1.fastq.gz</p>
-<p>curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fastq.gz ; gunzip SRR2584866_2.fastq.gz</p>
-<p/>
-
-<h2>Syllabus</h2>
-<h3>Day 1</h3>
-<p>The morning will focus on the basics of the Unix shell.
-The Unix shell has been around longer than most of its users have been alive. It has survived so long because it’s a power tool that allows people to do complex things with just a few keystrokes. More importantly, it helps them combine existing programs in new ways and automate repetitive tasks, so they aren’t typing the same things over and over again. Use of the shell is fundamental to using a wide range of other powerful tools and computing resources (including “high-performance computing” supercomputers). These lessons will start you on a path towards using these resources effectively.
-In the afternoon you will put those skills into practice.
-You will learn about compute clusters, how to use them for your computations and what are the best practices for it.</p>
-
-<h3>Day 2</h3>
-<p> Second day will focus on using Python in high-performance computing environments to automate data analysis pipelines with <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a> (for a detailed discussion for why we are teaching Snakemake, see this <a href="https://hpc-carpentry.github.io/hpc-python/discuss/">lesson’s discussion page</a>). We’ll start with the basics and cover everything you need to get started. Some elements of writing performance-oriented code will be covered, but it is not the main focus. There is no prerequisite knowlege for this tutorial, although having some prior experience with the command-line or a compute cluster will be very helpful.</p>
-
-<hr/>
-
 {% comment %}
   SCHEDULE
 
@@ -123,17 +99,18 @@ You will learn about compute clusters, how to use them for your computations and
 <hr/>
 
 <h2 id="general">General Information</h2>
+
+Vastly increasing data volumes and data complexity imply that researchers require novel solutions to large scale cluster computing. This workshop aims to provide an introduction and
+hands-on experience with our new solution to this problem: "Spider - a new and versatile platform for high-throughput data processing".
+The objective of the workshop is to distinguish the different functionalities of the Spider platform, to provide information on applying for access, and to give participants hands-on experience with basic job processing, software distribution and portability, using internal and external storage systems, and how to collaborate on data analysis within a project. Participants will acquire first hand experience with the flexibility, interactivity and interoperability offered by the Spider platform.
+
 {% comment %}
 AUDIENCE
 {% endcomment %}
 
 <p id="who">
   <strong>Who:</strong>
-  The course is aimed at graduate students and other researchers, particularly from life sciences, who would like to know how a supercomputer can help to accomplish their everyday work.
-  <strong>
-    You don't need to have any previous knowledge of the tools
-    that will be presented at the workshop.
-  </strong>
+    Anyone who wants to start processing large data volumes (tens to hundreds of terabytes or even more)
 </p>
 
 {% if page.carpentry == "dc" %}
@@ -176,7 +153,7 @@ Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
   <strong>Requirements:</strong> Participants must bring a laptop with a
-  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.).
+  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.). Basic knowledge of UNIX commandline, bash scripting and cluster computing is expected.
 </p>
 
 {% comment %}
