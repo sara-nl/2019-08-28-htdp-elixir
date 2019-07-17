@@ -1,8 +1,8 @@
 # Various roles in Spider project spaces
 
 1. [Spider_roles](#spider-roles)
-2. [Get familiar with the login node](#spider-env)
-3. [Submit jobs](#job-submit)
+2. [Data manager role](#spider-dm)
+3. [Software manager role](#spider-sm)
 
 ### <a name="spider-roles"></a> 1. Spider roles
 
