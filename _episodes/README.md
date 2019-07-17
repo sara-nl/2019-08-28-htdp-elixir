@@ -22,7 +22,7 @@ Anyone who wants to start processing large data volumes (tens to hundreds of ter
 
 **Where**: 3.5 in SURF Utrecht
 
-**When**: 13:00-15:00 28 August 2019 (Wednesday)
+**When**: 13:00-17:00 28 August 2019 (Wednesday)
 
 **Program**:
 --------
