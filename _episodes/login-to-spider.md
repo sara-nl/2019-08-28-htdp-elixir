@@ -1,8 +1,60 @@
 # Logging onto Spider
 
+Here are your first steps:
 
+1. [Login to Spider](#spider-login)
+2. [Get familiar with the login node](#spider-env)
+3. [Submit jobs](#job-submit)
+
+### <a name="spider-login"></a> 1. Login to Spider
+
+The login credentials (e.g., spidercourse-g01) will be  provided to you at the start of the session. Open a terminal in your laptop 
+    
  ```sh
  ssh username@spider.surfsara.nl #replace `username` with the username assigned to you
  ```
+  
+### <a name="cartesius-env"></a> 2. Get familiar with the login node
+
+Familiarize yourself with your environment :
+
+ ```sh
+ whoami
+ id $USER
+ pwd
+ sinfo
+ ls /project
+ ```
+> **_Food for brain:_**
+>
+> * What does the output of the command "id $USER" tell you?
+> * How many worker nodesd are available on the cluster?
+> * Do you know what project you belong to? What all access does it provide to you?
+
+
+### <a name="job-submit"></a> 3. Submit your first job
+
+#### 3.1 Submit a simple job 
+
+Inspect the script my-first-job.sh:
+  
+ ```sh
+ cat my-first-job.sh
+  
+ #!/bin/bash
+ #SBATCH -t 10:00
+ #SBATCH --reservation=??
+ echo "Hello I am running my first job"
+ echo "I am running on " $HOSTNAME
+ ```
+ -t: max total run time of the job, here it is 10 minutes
+  
+Now that you have inspected the script that will submit your job, let's submit a job by running the following:
+  
+ ```sh
+ sbatch my-first-job.sh  #This command will submit a job and give you a job ID in return
+ squeue -u $USER  #Check the status of your job
+ ls  #Check if the output,slurm-jobID.out, is present
+ cat slurm-yourjobid.out
+ ```
  
- Some commands to familiarise yourzelf with the login node, project spaces, etc.
