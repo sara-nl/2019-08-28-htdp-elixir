@@ -6,17 +6,33 @@
 
 ### <a name="spider-roles"></a> 1. Spider roles
 
+#### 3.1 Project environment
+
+Familiarize yourself with your environment :
+
+ ```sh
+ ls /project
+ ```
+> **_Food for brain:_**
+>
+> * Do you know what project you belong to? What all access does it provide to you?
+> * What are each of ther project directories for? What is public/private? Do you have read write permissions ion all spaces?
   
 ### <a name="cartesius-env"></a> 2. Data manager role
 
  ```sh
  id $USER
  ```
+ 
 > **_Food for brain:_**
 >
-> * What does the output of the command "id $USER" tell you?
-> * How many worker nodesd are available on the cluster?
-> * Do you know what project you belong to? What all access does it provide to you?
+> * Are you a data manager? If not, do you know who is the data manager?
+
+ ```sh
+ getent group spidercourse-data
+ getent group spidercourse-sw
+ getent group spidercourse-user
+ ```
 
 
 ### <a name="job-submit"></a> 3. Software manager role
