@@ -40,7 +40,7 @@ Familiarize yourself with your environment :
 
 Let us download some data that we will use later to run jobs on the cluster. The data we are going to use is part of a long-term evolution experiment led by [Richard Lenski](https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment) to assess adaptation in E. coli. A population was propagated for more than 50,000 generations in a glucose-limited minimal medium. We will be working with three sample events from the Ara-3 strain of this experiment, one from 5,000 generations, one from 15,000 generations, and one from 50,000 generations. 
 
-Let us download the paired-end data from [European Nucleotide Archive](https://www.ebi.ac.uk/ena)
+Let us download the paired-end data from [European Nucleotide Archive](https://www.ebi.ac.uk/ena).
 
 ```sh
 cd /project/spidercourse/Data
@@ -53,6 +53,14 @@ curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_1.fa
 curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_2.fastq.gz
 curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_1.fastq.gz
 curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fastq.gz 
+```
+
+Let us also download the reference genome for E. coli REL606.
+
+```sh
+mkdir -p data/ref_genome
+curl -L -o data/ref_genome/ecoli_rel606.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/017/985/GCA_000017985.1_ASM1798v1/GCA_000017985.1_ASM1798v1_genomic.fna.gz
+gunzip data/ref_genome/ecoli_rel606.fasta.gz
 ```
 
 ### <a name="job-submit"></a> 3. Software manager role
