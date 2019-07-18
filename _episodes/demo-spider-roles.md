@@ -133,6 +133,9 @@ Let us also download the reference genome for E. coli REL606.
 
 You may also download the above data in your $HOME directory instead of project Data space. However, please note that for running the examples today the paths defined in the workflows expect the data to be in the project Data space. You will need to modify all the paths in the further scripts if you download the data in your $HOME.
 
+#### 3.3 Data cleanup
+
+Now that you have the raw data, we will assess the quality of the sequence reads contained in our fastq files.
 
 #### Acknowledgements 
 This example was adopted from https://datacarpentry.org/wrangling-genomics/ 
