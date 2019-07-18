@@ -65,21 +65,33 @@ gunzip data/ref_genome/ecoli_rel606.fasta.gz
 
 ### <a name="job-submit"></a> 3. Software manager role
 
-To install software for the project users, you should be a softweare manager. PLease follow the following instructions to install the necessary software to run the variant calling workflow.
+To install software for the project users, you should be a softweare manager. Please follow the following instructions to install the necessary software to run the variant calling workflow.
 
 We will use Miniconda which is a package manager that simplifies the installation process. Please first install miniconda3 and then proceed to the installation of individual tools.
 
 #### Miniconda installation
 
-In this step you will install the latest Miniconda 
+In this step the software manager will install the latest Miniconda 
 
 ```sh
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-#Please provide this path for installation
-/project/surfadvisors/Software/ecoli-analysis-software/miniconda3 
-exit #
+wget https://repo.continuum.io/miniconda/Miniconda2-4.6.14-Linux-x86_64.sh
+bash Miniconda2-4.6.14-Linux-x86_64.sh
 ```
+
+It will ask you for an installation path. If you are not a software manager you cannot use the project Software space. But a regular user can also install the software in their $HOME. 
+
+```sh
+#Please provide the following path for installation as a software manager
+/project/surfadvisors/Software/ecoli-analysis-software/miniconda3 
+
+or 
+
+#Please provide the following path for installation as a regular user
+$HOME/ecoli-analysis-software
+
+exit 
+```
+
 Login again to Spider and inspect what environment variables have been set up
 
 ```sh
