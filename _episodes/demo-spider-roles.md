@@ -136,3 +136,8 @@ You may also download the above data in your $HOME directory instead of project 
 This example was adopted from https://datacarpentry.org/wrangling-genomics/ 
 
  
+We will also download a set of trimmed FASTQ files to work with. These are small subsets of our real trimmed data, and will enable us to run our variant calling workflow quite quickly.
+
+$ curl -L -o sub.tar.gz https://ndownloader.figshare.com/files/14418248
+$ tar xvf sub.tar.gz
+$ mv sub/ ~/dc_workshop/data/trimmed_fastq_small
