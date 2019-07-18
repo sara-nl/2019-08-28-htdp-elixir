@@ -43,7 +43,6 @@ Inspect the script my-first-job.sh:
   
  #!/bin/bash
  #SBATCH -t 10:00
- #SBATCH --reservation=??
  echo "Hello I am running my first job"
  echo "I am running on " $HOSTNAME
  ```
