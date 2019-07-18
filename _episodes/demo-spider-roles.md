@@ -36,7 +36,7 @@ Familiarize yourself with your environment :
  getent group spidercourse-user
  ```
  
-#### 2.2 Data upload
+#### 2.2 Data download
 
 Let us download some data that we will use later to run jobs on the cluster. The data we are going to use is part of a long-term evolution experiment led by [Richard Lenski](https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment) to assess adaptation in E. coli. A population was propagated for more than 50,000 generations in a glucose-limited minimal medium. We will be working with three sample events from the Ara-3 strain of this experiment, one from 5,000 generations, one from 15,000 generations, and one from 50,000 generations. 
 
