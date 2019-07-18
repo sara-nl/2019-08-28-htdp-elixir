@@ -1,10 +1,10 @@
-# Various roles in Spider project spaces
+# Spider project spaces and roles
 
-1. [Spider_roles](#spider-roles)
+1. [Project environment](#spider-spaces)
 2. [Data management](#spider-dm)
 3. [Software manager role](#spider-sm)
 
-### <a name="spider-roles"></a> 1. Spider roles
+### <a name="spider-spaces"></a> 1. Spider project environment
 
 #### 1.1 Project environment
 
@@ -65,7 +65,40 @@ gunzip data/ref_genome/ecoli_rel606.fasta.gz
 
 ### <a name="job-submit"></a> 3. Software manager role
 
-  
+To install software for the project users, you should be a softweare manager. PLease follow the following instructions to install the necessary software to run the variant calling workflow.
+
+We will use Miniconda which is a package manager that simplifies the installation process. Please first install miniconda3 and then proceed to the installation of individual tools.
+
+#### Miniconda installation
+
+In this step you will install the latest Miniconda 
+
+```sh
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+#Please provide this path for installation
+/project/surfadvisors/Software/ecoli-analysis-software/miniconda3 
+exit #
+```
+Login again to Spider and inspect what environment variables have been set up
+
+```sh
+cat $HOME/.bashrc
+```
+
+Follow the further instructions for the installation of individual tools
+
+```sh
+conda install -c bioconda fastqc=0.11.7=5
+
+conda install -c bioconda trimmomatic=0.38=0
+
+conda install -c bioconda bwa=0.7.17=ha92aebf_3
+
+conda install -c bioconda samtools=1.9=h8ee4bcc_1
+
+conda install -c bioconda bcftools=1.8=h4da6232_3 
+```
 
 #### Acknowledgements 
 This example was adopted from https://datacarpentry.org/wrangling-genomics/ 
