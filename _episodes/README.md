@@ -17,8 +17,6 @@ Anyone who wants to start processing large data volumes (tens to hundreds of ter
   - Familiarity with Linux commands
   
   - Familiarity with batch systems (ssh access, job submission), preferably you have followed Introduction to cluster computing course (cluster-computing)
-  
-  - Please install Docker to your laptop prior to the course. Install from this [link](https://store.docker.com/search?offering=community&type=edition) (may require creation of a free Docker account)
 
 **Where**: 3.5 in SURF Utrecht
 
@@ -28,7 +26,7 @@ Anyone who wants to start processing large data volumes (tens to hundreds of ter
 --------
 13:00 - Introduction to the high throughput platform
 
-13:30 - [Login to the platform (ssh key troubleshooting] (https://github.com/maithili-k/singularity-course/blob/master/run-docker.md)
+13:30 - [Login to the platform (ssh key troubleshooting](https://github.com/sara-nl/2019-08-28-htdp-elixir/blob/gh-pages/_episodes/login-to-spider.md)
 
 14:00 - Demo of data manager and software manager role
 
