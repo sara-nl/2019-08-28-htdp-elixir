@@ -109,9 +109,8 @@ Let us download some data that we will use later to run jobs on the cluster. The
 Let us download the paired-end data from [European Nucleotide Archive](https://www.ebi.ac.uk/ena).
 
  ```sh
- cd /project/spidercourse/Data/ecoli-analysis/data
- mkdir untrimmed_fastq/
- cd untrimmed_fastq
+ mkdir -p /project/spidercourse/Data/ecoli-analysis/data/untrimmed_fastq/
+ cd /project/spidercourse/Data/ecoli-analysis/data/untrimmed_fastq/
 
  curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz
  curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz
