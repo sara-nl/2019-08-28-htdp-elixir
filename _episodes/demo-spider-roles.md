@@ -139,7 +139,7 @@ Now that you have the raw data, we will assess the quality of the sequence reads
 
 ```sh
 cd /project/surfadvisors/Data/ecoli-analysis
-cat job-submit--datacleaning.sh
+cat job-submit--datatrimming.sh
 
 #!/bin/bash
 #SBATCH -N 1
@@ -147,8 +147,14 @@ cat job-submit--datacleaning.sh
 #SBATCH --constraint=skylake
 time bash /project/spidercourse/Data/ecoli-analysis/read_qc.sh 
 ```
+Let the data manager submit the job and then we can inspect the script while the job runs in the meantime
 
-This script in turns call another script which we can inspect further
+```sh
+sbatch --job-name=data-trim -J 'data-trim' --output=%x-%j.out job-submit-datatrimming.sh
+squeue -u $USER
+```
+
+Let us inspect what steps we follow in the data trimming
 
 ```sh
 cat read_qc.sh 
