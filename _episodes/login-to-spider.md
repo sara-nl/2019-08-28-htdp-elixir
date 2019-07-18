@@ -40,15 +40,18 @@ Inspect the script my-first-job.sh:
   
  ```sh
  cat my-first-job.sh
-  
+ 
  #!/bin/bash
  #SBATCH -t 10:00
- echo "Hello I am running my first job"
- echo "I am running on " $HOSTNAME
+ #SBATCH -c 1
+ #SBATCH -p normal
+ sinfo
+ echo "You just ran your first job on" $HOSTNAME " with a job ID " $SLURM_JOBID
  ```
  -t: max total run time of the job, here it is 10 minutes
-  
-Now that you have inspected the script that will submit your job, let's submit a job by running the following:
+ -c: 1 core requested
+ 
+Now that you have inspected the script that will submit your job, let's submit a job by running the following command:
   
  ```sh
  sbatch my-first-job.sh  #This command will submit a job and give you a job ID in return
