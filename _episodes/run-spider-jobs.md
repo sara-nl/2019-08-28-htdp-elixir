@@ -51,15 +51,15 @@ bwa index $genome
 
 mkdir -p sam bam bcf vcf
 
-for fq1 in $ecolipath/data/trimmed_fastq/*_1.trim.sub.fastq
+for fq1 in $ecolipath/data/trimmed_fastq_small/*_1.trim.sub.fastq
     do
     echo "working with file $fq1"
 
     base=$(basename $fq1 _1.trim.sub.fastq)
     echo "base name is $base"
 
-    fq1=$ecolipath/data/trimmed_fastq/${base}_1.trim.sub.fastq
-    fq2=$ecolipath/data/trimmed_fastq/${base}_2.trim.sub.fastq
+    fq1=$ecolipath/data/trimmed_fastq_small/${base}_1.trim.sub.fastq
+    fq2=$ecolipath/data/trimmed_fastq_small/${base}_2.trim.sub.fastq
     sam=$ecolipath/results/sam/${base}.aligned.sam
     bam=$ecolipath/results/bam/${base}.aligned.bam
     sorted_bam=$ecolipath/results/bam/${base}.aligned.sorted.bam
