@@ -16,7 +16,7 @@ Familiarize yourself with your environment :
 > **_Food for brain:_**
 >
 > * Do you know what project you belong to? What all access does it provide to you?
-> * What are each of ther project directories for? What is public/private? Do you have read write permissions ion all spaces?
+> * What are each of ther project directories for? What is public/private? Do you have read write permissions on all spaces?
 
 ### <a name="job-submit"></a> 2. Software management
 
@@ -138,10 +138,9 @@ Now that you have the raw data, we will assess the quality of the sequence reads
 
 ```sh
 cd /project/surfadvisors/Data/ecoli-analysis
-cat job-submit--datatrimming.sh
+cat job-submit-datatrimming.sh
 
 #!/bin/bash
-#SBATCH -N 1
 #SBATCH -c 1
 #SBATCH --constraint=skylake
 time bash /project/spidercourse/Data/ecoli-analysis/read_qc.sh 
