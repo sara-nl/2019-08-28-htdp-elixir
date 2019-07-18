@@ -1,24 +1,26 @@
 # Various roles in Spider project spaces
 
 1. [Spider_roles](#spider-roles)
-2. [Data manager role](#spider-dm)
+2. [Data management](#spider-dm)
 3. [Software manager role](#spider-sm)
 
 ### <a name="spider-roles"></a> 1. Spider roles
 
-#### 3.1 Project environment
+#### 1.1 Project environment
 
 Familiarize yourself with your environment :
 
  ```sh
- ls /project
+ ls /project 
  ```
 > **_Food for brain:_**
 >
 > * Do you know what project you belong to? What all access does it provide to you?
 > * What are each of ther project directories for? What is public/private? Do you have read write permissions ion all spaces?
   
-### <a name="cartesius-env"></a> 2. Data manager role
+### <a name="spider-dm"></a> 2. Data management
+
+#### 2.1 Data manager Role
 
  ```sh
  id $USER
@@ -33,11 +35,31 @@ Familiarize yourself with your environment :
  getent group spidercourse-sw
  getent group spidercourse-user
  ```
+ 
+#### 2.2 Data upload
 
+Let us download some data that we will use later to run jobs on the cluster. The data we are going to use is part of a long-term evolution experiment led by [Richard Lenski](https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment) to assess adaptation in E. coli. A population was propagated for more than 50,000 generations in a glucose-limited minimal medium. We will be working with three sample events from the Ara-3 strain of this experiment, one from 5,000 generations, one from 15,000 generations, and one from 50,000 generations. 
+
+Let us download the paired-end data from [European Nucleotide Archive](https://www.ebi.ac.uk/ena)
+
+```sh
+cd /project/spidercourse/Data
+mkdir -p ecoli-analysis/data/untrimmed_fastq/
+cd ecoli-analysis/data/untrimmed_fastq
+
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_1.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_2.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_1.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fastq.gz 
+```
 
 ### <a name="job-submit"></a> 3. Software manager role
 
   
 
- 
+#### Acknowledgements 
+This example was adopted from https://datacarpentry.org/wrangling-genomics/ 
+
  
