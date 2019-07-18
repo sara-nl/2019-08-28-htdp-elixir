@@ -23,8 +23,8 @@ Familiarize yourself with your environment :
  id $USER
  pwd
  sinfo
- ls /project
- ```
+```
+
 > **_Food for brain:_**
 >
 > * What does the output of the command "id $USER" tell you?
