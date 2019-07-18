@@ -1,7 +1,7 @@
 # Spider project spaces and roles
 
 1. [Project environment](#spider-spaces)
-2. [Software manager role](#spider-sm)
+2. [Software management](#spider-sm)
 3. [Data management](#spider-dm)
 
 ### <a name="spider-spaces"></a> 1. Spider project environment
@@ -18,7 +18,7 @@ Familiarize yourself with your environment :
 > * Do you know what project you belong to? What all access does it provide to you?
 > * What are each of ther project directories for? What is public/private? Do you have read write permissions ion all spaces?
 
-### <a name="job-submit"></a> 2. Software manager role
+### <a name="job-submit"></a> 2. Software management
 
 #### 2.1 Software manager Role
 
