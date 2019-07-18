@@ -28,7 +28,7 @@ Anyone who wants to start processing large data volumes (tens to hundreds of ter
 --------
 13:00 - Introduction to the high throughput platform
 
-13:30 - Login to the platform (ssh key troubleshooting)
+13:30 - [Login to the platform (ssh key troubleshooting] (https://github.com/maithili-k/singularity-course/blob/master/run-docker.md)
 
 14:00 - Demo of data manager and software manager role
 
