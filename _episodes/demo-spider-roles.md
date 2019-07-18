@@ -143,7 +143,7 @@ cat job-submit-datatrimming.sh
 #!/bin/bash
 #SBATCH -c 1
 #SBATCH --constraint=skylake
-time bash /project/spidercourse/Data/ecoli-analysis/read_qc.sh 
+time bash /project/spidercourse/Data/ecoli-analysis/data_qc.sh 
 ```
 Let the data manager submit the job and then we can inspect the script while the job runs in the meantime
 
@@ -155,7 +155,7 @@ squeue -u $USER
 Let us inspect what steps we follow in the data trimming
 
 ```sh
-cat read_qc.sh 
+cat data_qc.sh 
 
 set -e
 ecolipath=/project/surfadvisors/Data/ecoli-analysis
