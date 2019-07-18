@@ -109,9 +109,9 @@ Let us download some data that we will use later to run jobs on the cluster. The
 Let us download the paired-end data from [European Nucleotide Archive](https://www.ebi.ac.uk/ena).
 
  ```sh
- cd /project/spidercourse/Data
- mkdir -p ecoli-analysis/data/untrimmed_fastq/
- cd ecoli-analysis/data/untrimmed_fastq
+ cd /project/spidercourse/Data/ecoli-analysis/data
+ mkdir untrimmed_fastq/
+ cd untrimmed_fastq
 
  curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz
  curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz
@@ -124,9 +124,11 @@ Let us download the paired-end data from [European Nucleotide Archive](https://w
 Let us also download the reference genome for E. coli REL606.
 
  ```sh
- mkdir -p data/ref_genome
- curl -L -o data/ref_genome/ecoli_rel606.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/017/985/GCA_000017985.1_ASM1798v1/GCA_000017985.1_ASM1798v1_genomic.fna.gz
- gunzip data/ref_genome/ecoli_rel606.fasta.gz
+ cd /project/spidercourse/Data/ecoli-analysis/data
+ mkdir ref_genome
+ cd ref_genome
+ curl -L -o ecoli_rel606.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/017/985/GCA_000017985.1_ASM1798v1/GCA_000017985.1_ASM1798v1_genomic.fna.gz
+ gunzip ecoli_rel606.fasta.gz
  ```
 
 You may also download the above data in your $HOME directory instead of project Data space. However, please note that for running the examples today the paths defined in the workflows expect the data to be in the project Data space. You will need to modify all the paths in the further scripts if you download the data in your $HOME.
@@ -136,8 +138,3 @@ You may also download the above data in your $HOME directory instead of project 
 This example was adopted from https://datacarpentry.org/wrangling-genomics/ 
 
  
-We will also download a set of trimmed FASTQ files to work with. These are small subsets of our real trimmed data, and will enable us to run our variant calling workflow quite quickly.
-
-$ curl -L -o sub.tar.gz https://ndownloader.figshare.com/files/14418248
-$ tar xvf sub.tar.gz
-$ mv sub/ ~/dc_workshop/data/trimmed_fastq_small
