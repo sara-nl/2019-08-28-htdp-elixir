@@ -48,7 +48,7 @@ It will ask you for an installation path. If you are not a software manager you 
 
  ```sh
  #Please provide the following path for installation as a software manager
- /project/surfadvisors/Software/ecoli-analysis-software/miniconda3 
+ /project/spidercourse/Software/ecoli-analysis-software/miniconda3 
 
  or 
 
@@ -137,7 +137,7 @@ You may also download the above data in your $HOME directory instead of project 
 Now that you have the raw data, we will assess the quality of the sequence reads contained in our fastq files and run filtering.
 
 ```sh
-cd /project/surfadvisors/Data/ecoli-analysis
+cd /project/spidercourse/Data/ecoli-analysis
 cat job-submit-datatrimming.sh
 
 #!/bin/bash
@@ -158,7 +158,7 @@ Let us inspect what steps we follow in the data trimming
 cat data_qc.sh 
 
 set -e
-ecolipath=/project/surfadvisors/Data/ecoli-analysis
+ecolipath=/project/spidercourse/Data/ecoli-analysis
 
 mkdir -p $ecolipath/data/fastqc_untrimmed_reads
 
@@ -168,7 +168,7 @@ echo "Running FastQC ..."
 fastqc $ecolipath/data/untrimmed_fastq/*.fastq* -o ./ 
 
 cd $ecolipath/data/untrimmed_fastq
-cp /project/surfadvisors/Software/dc-genomics/miniconda3/pkgs/trimmomatic-0.38-0/share/trimmomatic-0.38-0/adapters/NexteraPE-PE.fa .
+cp /project/spidercourse/Software/ecoli-analysis-software/miniconda3/pkgs/trimmomatic-0.38-0/share/trimmomatic-0.38-0/adapters/NexteraPE-PE.fa .
 echo "Running trimmomatic"
 for infile in *_1.fastq.gz
 do
