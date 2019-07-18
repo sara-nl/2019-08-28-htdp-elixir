@@ -34,55 +34,51 @@ Familiarize yourself with your environment :
  getent group spidercourse-sw
  getent group spidercourse-user
  ```
-
-To install software for the project users, you should be a software manager. Please follow the following instructions to install the necessary software to run the variant calling workflow.
-
-We will use Miniconda which is a package manager that simplifies the installation process. Please first install miniconda3 and then proceed to the installation of individual tools.
-
+ 
 #### 2.2 Miniconda installation
 
-In this step the software manager will install the latest Miniconda 
+To install software for the project users, you should be a software manager. We will use Miniconda which is a package manager that simplifies the installation process. Please first install miniconda3 and then proceed to the installation of individual tools.
 
-```sh
-wget https://repo.continuum.io/miniconda/Miniconda2-4.6.14-Linux-x86_64.sh
-bash Miniconda2-4.6.14-Linux-x86_64.sh
-```
+ ```sh
+ wget https://repo.continuum.io/miniconda/Miniconda2-4.6.14-Linux-x86_64.sh
+ bash Miniconda2-4.6.14-Linux-x86_64.sh
+ ```
 
 It will ask you for an installation path. If you are not a software manager you cannot use the project Software space. But a regular user can also install the software in their $HOME. 
 
-```sh
-#Please provide the following path for installation as a software manager
-/project/surfadvisors/Software/ecoli-analysis-software/miniconda3 
+ ```sh
+ #Please provide the following path for installation as a software manager
+ /project/surfadvisors/Software/ecoli-analysis-software/miniconda3 
 
-or 
+ or 
 
-#Please provide the following path for installation as a regular user
-$HOME/ecoli-analysis-software
+ #Please provide the following path for installation as a regular user
+ $HOME/ecoli-analysis-software
 
-exit 
-```
+ exit 
+ ```
 
 Login again to Spider and inspect what environment variables have been set up
 
-```sh
-cat $HOME/.bashrc
-```
+ ```sh
+ cat $HOME/.bashrc
+ ```
 
 #### 2.3 Variant calling tools installation
 
 Follow the further instructions for the installation of individual tools
 
-```sh
-conda install -c bioconda fastqc=0.11.7=5
+ ```sh
+ conda install -c bioconda fastqc=0.11.7=5
 
-conda install -c bioconda trimmomatic=0.38=0
+ conda install -c bioconda trimmomatic=0.38=0
 
-conda install -c bioconda bwa=0.7.17=ha92aebf_3
+ conda install -c bioconda bwa=0.7.17=ha92aebf_3
 
-conda install -c bioconda samtools=1.9=h8ee4bcc_1
+ conda install -c bioconda samtools=1.9=h8ee4bcc_1
 
-conda install -c bioconda bcftools=1.8=h4da6232_3 
-```
+ conda install -c bioconda bcftools=1.8=h4da6232_3 
+ ```
 
 ### <a name="spider-dm"></a> 3. Data management
 
@@ -98,7 +94,6 @@ conda install -c bioconda bcftools=1.8=h4da6232_3
 
  ```sh
  getent group spidercourse-data
- getent group spidercourse-sw
  getent group spidercourse-user
  ```
  
@@ -108,26 +103,26 @@ Let us download some data that we will use later to run jobs on the cluster. The
 
 Let us download the paired-end data from [European Nucleotide Archive](https://www.ebi.ac.uk/ena).
 
-```sh
-cd /project/spidercourse/Data
-mkdir -p ecoli-analysis/data/untrimmed_fastq/
-cd ecoli-analysis/data/untrimmed_fastq
+ ```sh
+ cd /project/spidercourse/Data
+ mkdir -p ecoli-analysis/data/untrimmed_fastq/
+ cd ecoli-analysis/data/untrimmed_fastq
 
-curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz
-curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz
-curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_1.fastq.gz
-curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_2.fastq.gz
-curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_1.fastq.gz
-curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fastq.gz 
-```
+ curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz
+ curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz
+ curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_1.fastq.gz
+ curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_2.fastq.gz
+ curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_1.fastq.gz
+ curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fastq.gz 
+ ```
 
 Let us also download the reference genome for E. coli REL606.
 
-```sh
-mkdir -p data/ref_genome
-curl -L -o data/ref_genome/ecoli_rel606.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/017/985/GCA_000017985.1_ASM1798v1/GCA_000017985.1_ASM1798v1_genomic.fna.gz
-gunzip data/ref_genome/ecoli_rel606.fasta.gz
-```
+ ```sh
+ mkdir -p data/ref_genome
+ curl -L -o data/ref_genome/ecoli_rel606.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/017/985/GCA_000017985.1_ASM1798v1/GCA_000017985.1_ASM1798v1_genomic.fna.gz
+ gunzip data/ref_genome/ecoli_rel606.fasta.gz
+ ```
 
 You may also download the above data in your $HOME directory instead of project Data space. However, please note that for running the examples today the paths defined in the workflows expect the data to be in the project Data space. You will need to modify all the paths in the further scripts if you download the data in your $HOME.
 
