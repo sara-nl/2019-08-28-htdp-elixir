@@ -135,7 +135,48 @@ You may also download the above data in your $HOME directory instead of project 
 
 #### 3.3 Data cleanup
 
-Now that you have the raw data, we will assess the quality of the sequence reads contained in our fastq files.
+Now that you have the raw data, we will assess the quality of the sequence reads contained in our fastq files and run filtering.
+
+```sh
+cd /project/surfadvisors/Data/ecoli-analysis
+cat job-submit--datacleaning.sh
+
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -c 1
+#SBATCH --constraint=skylake
+time bash /project/spidercourse/Data/ecoli-analysis/read_qc.sh 
+```
+
+This script in turns call another script which we can inspect further
+
+```sh
+cat read_qc.sh 
+
+set -e
+ecolipath=/project/surfadvisors/Data/ecoli-analysis
+
+mkdir -p $ecolipath/data/fastqc_untrimmed_reads
+
+cd $ecolipath/data/fastqc_untrimmed_reads/
+
+echo "Running FastQC ..."
+fastqc $ecolipath/data/untrimmed_fastq/*.fastq* -o ./ 
+
+mkdir $ecolipath/data/trimmed_fastq	
+cd $ecolipath/data/untrimmed_fastq
+cp /project/surfadvisors/Software/dc-genomics/miniconda3/pkgs/trimmomatic-0.38-0/share/trimmomatic-0.38-0/adapters/NexteraPE-PE.fa .
+echo "Running trimmomatic"
+for infile in $ecolipath/data/untrimmed_fastq/*_1.fastq.gz
+do
+   base=$(basename ${infile} _1.fastq.gz)
+   trimmomatic PE ${infile} ${base}_2.fastq.gz \
+               ${base}_1.trim.fastq.gz ${base}_1un.trim.fastq.gz \
+               ${base}_2.trim.fastq.gz ${base}_2un.trim.fastq.gz \
+               SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15 
+done
+echo "done"
+```
 
 #### Acknowledgements 
 This example was adopted from https://datacarpentry.org/wrangling-genomics/ 
