@@ -79,6 +79,11 @@ Follow the further instructions for the installation of individual tools
 
  conda install -c bioconda bcftools=1.8=h4da6232_3 
  ```
+ 
+> **_Food for brain:_**
+>
+> * Do you know where the above pacakages are installed? How do you test if the installation was successful?
+
 
 ### <a name="spider-dm"></a> 3. Data management
 
