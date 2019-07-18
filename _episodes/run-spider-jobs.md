@@ -27,7 +27,7 @@ mkdir results
 Let us inspect the contents of the script that will run the job of variant calling
 
 ```sh
-cat job-submit-variant-calling.sdh
+cat job-submit-variant-calling.sh
 
 #!/bin/bash
 #SBATCH -c 1
@@ -81,7 +81,7 @@ for fq1 in $ecolipath/data/trimmed_fastq/*_1.trim.fastq.gz
 Let us submit the job
 
 ```sh
-sbatch --job-name=data-trim -J 'data-trim' --output=%x-%j.out job-submit-datatrimming.sh
+sbatch --job-name=var-call -J 'var-call' --output=%x-%j.out job-submit-variant-calling.sh
 squeue -u $USER
 ```
 
