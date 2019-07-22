@@ -3,6 +3,7 @@
 1. [Project environment](#spider-spaces)
 2. [Data management](#spider-dm)
 3. [Software management](#spider-sm)
+4. [Data cleanup](#data-cleanup)
 
 ### <a name="spider-spaces"></a> 1. Spider project environment
 
@@ -189,7 +190,7 @@ In this particular case, the missing library was downloaded to Spider and copied
 cp /scratch/libcrypto.so.1.0.0 ecoli-analysis-software/miniconda2/lib/
 ```
 
-### 4 Data cleanup
+### <a name="data-cleanup"></a> 4. Data cleanup
 
 Now that you have the raw data and the software installed, we will assess the quality of the sequence reads contained in our fastq files and run filtering.
 
