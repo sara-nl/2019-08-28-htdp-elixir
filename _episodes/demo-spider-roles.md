@@ -50,7 +50,7 @@ It will ask you for an installation path. If you are not a software manager you 
 
  ```sh
  #Please provide the following path for installation as a software manager
- /project/spidercourse/Software/ecoli-analysis-software/miniconda3 
+ /project/spidercourse/Software/ecoli-analysis-software/miniconda2 
 
  or 
 
