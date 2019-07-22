@@ -26,9 +26,15 @@ Our variant calling workflow has the following steps:
 6. Filter and report the SNP variants in VCF (variant calling format) 
 
 ```sh
+#As data manager
 cd /project/spidercourse/Data/ecoli-analysis/
+
+# As a regular user
+cd $HOME/ecoli-analysis/
+
 mkdir results
 ```
+
 Let us inspect the contents of the script that will run the job of variant calling
 
 ```sh
