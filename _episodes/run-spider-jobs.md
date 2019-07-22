@@ -29,10 +29,8 @@ Our variant calling workflow has the following steps:
 #As data manager
 cd /project/spidercourse/Data/ecoli-analysis/
 
-# As a regular user
-cd $HOME/ecoli-analysis/
-
 mkdir results
+cd results
 wget the variant caling file here (fix this)
 ```
 
