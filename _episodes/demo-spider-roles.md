@@ -162,64 +162,33 @@ Follow the further instructions for the installation of individual tools
 > * Do you know where the above pacakages are installed? How do you test if the installation was successful? #Hint - try running one of the above installed software
 
 ```sh
+fastqc -h (runs quality control checks on raw sequence data)
+trimmomatic (data trimming tool)
+bwa (maps DNA sequences against reference genome)
+samtools (utility for manipulating data in the SAM format)
+bcftools (variant calling tool)
+```
+
+For the last two tools you can see that a library is missing! This will very often be the case that not every installation will be completely successful on every system. If the Software manager resolves these issues, users can freely use the software and avoid hassles of resolving software dependencies. The Softare manager has already resolved this for you and instead of troubleshooting you can already start using this installation by performing the following steps:
+
+```sh
+nano $HOME/.bashrc
+
+#In the conda initialize set up replace the paths $HOME/ecoli-analysis-software/miniconda2 to /project/spidercourse/Software/ecoli-analysis-software/miniconda/...
+...
+...
+
+save the changes
+
+exit 
+```
+
+In this particular case, the missing library was downloaded to Spider and copied as follows: 
+
+```sh
 cp /scratch/libcrypto.so.1.0.0 ecoli-analysis-software/miniconda2/lib/
 ```
 
-
-
-#### 3.3 Data cleanup
-
-Now that you have the raw data, we will assess the quality of the sequence reads contained in our fastq files and run filtering.
-
-```sh
-cd /project/spidercourse/Data/ecoli-analysis
-cat job-submit-datatrimming.sh
-
-#!/bin/bash
-#SBATCH -c 1
-#SBATCH --constraint=skylake
-time bash /project/spidercourse/Data/ecoli-analysis/data_qc.sh 
-```
-Let the data manager submit the job and then we can inspect the script while the job runs in the meantime
-
-```sh
-sbatch --job-name=data-trim -J 'data-trim' --output=%x-%j.out job-submit-datatrimming.sh
-squeue -u $USER
-```
-
-Let us inspect what steps we follow in the data trimming
-
-```sh
-cat data_qc.sh 
-
-#!/bin/bash
-set -e
-ecolipath=/project/spidercourse/Data/ecoli-analysis
-
-mkdir -p $ecolipath/data/fastqc_untrimmed_reads
-
-cd $ecolipath/data/fastqc_untrimmed_reads/
-
-echo "Running FastQC ..."
-fastqc $ecolipath/data/untrimmed_fastq/*.fastq* -o ./ 
-
-cd $ecolipath/data/untrimmed_fastq
-cp /project/spidercourse/Software/ecoli-analysis-software/miniconda3/pkgs/trimmomatic-0.38-0/share/trimmomatic-0.38-0/adapters/NexteraPE-PE.fa .
-echo "Running trimmomatic"
-for infile in *_1.fastq.gz
-do
-   base=$(basename ${infile} _1.fastq.gz)
-   trimmomatic PE ${infile} ${base}_2.fastq.gz \
-               ${base}_1.trim.fastq.gz ${base}_1un.trim.fastq.gz \
-               ${base}_2.trim.fastq.gz ${base}_2un.trim.fastq.gz \
-               SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15 
-done
-
-mkdir $ecolipath/data/trimmed_fastq	
-mv *.trim* $ecolipath/data/trimmed_fastq
-
-echo "done"
-```
 
 #### Acknowledgements 
 This example was adopted from https://datacarpentry.org/wrangling-genomics/ 
