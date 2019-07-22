@@ -95,4 +95,4 @@ sbatch --job-name=var-call -J 'var-call' --output=%x-%j.out job-submit-variant-c
 squeue -u $USER
 ```
 
-
+The above will fal as the output will still be written to Data folders. Introduce the Shared space or make them do it in home
