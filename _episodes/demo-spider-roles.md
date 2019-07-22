@@ -193,8 +193,15 @@ save the changes
 
 exit 
 ```
+Now you are using the software environment that was set up by the Software manager.
 
-In this particular case, the missing library was downloaded to Spider and copied as follows: 
+```sh
+samtools
+bcftools
+
+echo $PATH
+```
+As you can see the error is resolved and you can proceed to running the analysis. Just sop you know in this particular case it was a simple solution, the missing library was downloaded to Spider and copied as follows: 
 
 ```sh
 cp /scratch/libcrypto.so.1.0.0 ecoli-analysis-software/miniconda2/lib/
