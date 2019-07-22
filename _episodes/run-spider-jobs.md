@@ -1,9 +1,14 @@
 # Running jobs on Spider
 
-We will download a set of trimmed FASTQ files to work with. These are small subsets of our real trimmed data we prepared earlier, and will enable us to run our variant calling workflow quite quickly.
+We will download a set of trimmed FASTQ files to work with. These are small subsets of our real trimmed data we prepared earlier, and will enable us to run our variant calling workflow quite quickly. Later on if you have more time, you can try using the full data.
 
 ```sh
+#As data manager
 cd /project/spidercourse/Data/ecoli-analysis/data
+
+# As a regular user
+cd $HOME/ecoli-analysis/data
+
 mkdir trimmed_fastq_small
 cd trimmed_fastq_small
 curl -L -o sub.tar.gz https://ndownloader.figshare.com/files/14418248
