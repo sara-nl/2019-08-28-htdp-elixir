@@ -281,6 +281,9 @@ Now let's submit the job
 sbatch --job-name=data-trim -J 'data-trim' --output=%x-%j.out job-submit-datatrimming.sh
 squeue -u $USER
 ```
+This job will create trimmed data file and files in .html format that can be used to display the summary report.
+
+---Depending on whether the public view issue is resolved or not, make them copy the html files to their laptop and view it, or use the Public view - this is the short step to introduce public data folder as a nice functionality.
 
 #### Acknowledgements 
 This example was adopted from https://datacarpentry.org/wrangling-genomics/ 
