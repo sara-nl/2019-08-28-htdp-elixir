@@ -163,11 +163,15 @@ Follow the further instructions for the installation of individual tools
 > * Do you know where the above pacakages are installed? How do you test if the installation was successful? #Hint - try running one of the above installed software
 
 ```sh
-fastqc -h (runs quality control checks on raw sequence data)
-trimmomatic (data trimming tool)
-bwa (maps DNA sequences against reference genome)
-samtools (utility for manipulating data in the SAM format)
-bcftools (variant calling tool)
+fastqc -h       (runs quality control checks on raw sequence data)
+
+trimmomatic     (data trimming tool)
+
+bwa             (maps DNA sequences against reference genome)
+
+samtools.       (utility for manipulating data in the SAM format)
+
+bcftools        (variant calling tool)
 ```
 
 For the last two tools you can see that a library is missing! This will very often be the case that not every installation will be completely successful on every system. If the Software manager resolves these issues, users can freely use the software and avoid hassles of resolving software dependencies. The Softare manager has already resolved this for you and instead of troubleshooting you can already start using this installation by performing the following steps:
