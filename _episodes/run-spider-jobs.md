@@ -49,6 +49,7 @@ This script in turn calls another script that will run the variant calling. Let 
 ```sh
 cat run_variant_calling.sh
 
+#!/bin/bash
 set -e
 ecolipath=/project/spidercourse/Data/ecoli-analysis
 
