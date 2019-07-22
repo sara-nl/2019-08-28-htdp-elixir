@@ -29,7 +29,6 @@ Familiarize yourself with your environment :
 >
 > * What does the output of the command "id $USER" tell you?
 > * How many worker nodesd are available on the cluster?
-> * Do you know what project you belong to? What all access does it provide to you?
 
 
 ### <a name="job-submit"></a> 3. Submit your first job
