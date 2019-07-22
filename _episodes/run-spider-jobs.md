@@ -30,7 +30,7 @@ Our variant calling workflow has the following steps:
 cd /project/spidercourse/Data/ecoli-analysis/
 
 mkdir results
-wget the variant caling file here (fix this)
+wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/gh-pages/_episodes/scripts/job-submit-variant-calling.sh
 ```
 
 Let us inspect the contents of the script that will run the job of variant calling
@@ -47,6 +47,8 @@ bash /project/spidercourse/Data/ecoli-analysis/run_variant_calling.sh
 This script in turn calls another script that will run the variant calling. Let us inspect those steps
 
 ```sh
+wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/gh-pages/_episodes/scripts/run-variant-calling.sh
+
 cat run_variant_calling.sh
 
 #!/bin/bash
