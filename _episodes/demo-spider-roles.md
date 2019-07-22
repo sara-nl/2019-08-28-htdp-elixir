@@ -16,7 +16,7 @@ Familiarize yourself with your environment :
 > **_Food for brain:_**
 >
 > * Do you know what project you belong to? What all access does it provide to you?
-> * What are each of ther project directories for? What is public/private? Do you have read write permissions on all spaces?
+> * What are each of the project directories for? What is public/private? Do you have read write permissions on all spaces?
 
 ### <a name="job-submit"></a> 2. Software management
 
