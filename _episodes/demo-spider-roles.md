@@ -284,6 +284,7 @@ squeue -u $USER
 This job will create trimmed data file and files in .html format that can be used to display the summary report.
 
 ---Depending on whether the public view issue is resolved or not, make them copy the html files to their laptop and view it, or use the Public view - this is the short step to introduce public data folder as a nice functionality.
+Also if this is getting longer thasn sn hour skip the fastqc steps - or do them and use ir in the later session
 
 #### Acknowledgements 
 This example was adopted from https://datacarpentry.org/wrangling-genomics/ 
