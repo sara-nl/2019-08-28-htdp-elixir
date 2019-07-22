@@ -225,7 +225,12 @@ cat job-submit-datatrimming.sh
 #!/bin/bash
 #SBATCH -c 1
 #SBATCH --constraint=skylake
-time bash /project/spidercourse/Data/ecoli-analysis/data_qc.sh 
+
+#As data manager uncomment the following line
+#bash /project/spidercourse/Data/ecoli-analysis/data_qc.sh 
+
+#As a regular user uncomment the following line
+bash $HOME/data_qc.sh 
 ```
 
 Let us inspect what steps we follow in the data trimming
