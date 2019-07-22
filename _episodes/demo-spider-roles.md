@@ -230,7 +230,7 @@ cat job-submit-datatrimming.sh
 #bash /project/spidercourse/Data/ecoli-analysis/data_qc.sh 
 
 #As a regular user uncomment the following line
-bash $HOME/data_qc.sh 
+bash $HOME/ecoli-analysis/data_qc.sh 
 ```
 
 Let us inspect what steps we follow in the data trimming
