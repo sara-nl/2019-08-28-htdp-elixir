@@ -33,6 +33,7 @@ cd /project/spidercourse/Data/ecoli-analysis/
 cd $HOME/ecoli-analysis/
 
 mkdir results
+wget the variant caling file here (fix this)
 ```
 
 Let us inspect the contents of the script that will run the job of variant calling
