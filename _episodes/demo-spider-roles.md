@@ -179,9 +179,15 @@ For the last two tools you can see that a library is missing! This will very oft
 ```sh
 nano $HOME/.bashrc
 
-#In the conda initialize set up replace the paths $HOME/ecoli-analysis-software/miniconda2 to /project/spidercourse/Software/ecoli-analysis-software/miniconda/...
-...
-...
+#In the conda initialize set up replace all the paths 
+
+# >>> conda initialize >>>
+
+$HOME/ecoli-analysis-software/miniconda2/bin/conda 
+
+to 
+
+/project/spidercourse/Software/ecoli-analysis-software/miniconda2/bin/conda
 
 save the changes
 
