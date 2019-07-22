@@ -1,8 +1,8 @@
 # Spider project spaces and roles
 
 1. [Project environment](#spider-spaces)
-2. [Software management](#spider-sm)
-3. [Data management](#spider-dm)
+2. [Data management](#spider-dm)
+3. [Software management](#spider-sm)
 
 ### <a name="spider-spaces"></a> 1. Spider project environment
 
@@ -19,82 +19,9 @@ Familiarize yourself with your environment :
 > * What all access does it provide to you?
 > * What are each of the project directories for? What is public/private? Do you have read write permissions on all spaces?
 
-### <a name="job-submit"></a> 2. Software management
+### <a name="spider-dm"></a> 2. Data management
 
-#### 2.1 Software manager Role
-
- ```sh
- id $USER
- ```
- 
-> **_Food for brain:_**
->
-> * Are you a software manager? If not, do you know who is the software manager?
-
- ```sh
- getent group spidercourse-sw
- getent group spidercourse-user
- ```
- 
-#### 2.2 Miniconda installation
-
-To install software for the project users, you should be a software manager. We will use Miniconda which is a package manager that simplifies the installation process. Please first install miniconda3 and then proceed to the installation of individual tools.
-
- ```sh
- cd /project/spidercourse/Software/ (or cd $HOME if you are not a software manager)
- wget https://repo.continuum.io/miniconda/Miniconda2-4.6.14-Linux-x86_64.sh
- bash Miniconda2-4.6.14-Linux-x86_64.sh
- ```
-
-It will ask you for an installation path. If you are not a software manager you cannot use the project Software space. But a regular user can also install the software in their $HOME. 
-
- ```sh
- #Please provide the following path for installation as a software manager
- /project/spidercourse/Software/ecoli-analysis-software/miniconda2 
-
- or 
-
- #Please provide the following path for installation as a regular user
- $HOME/ecoli-analysis-software/miniconda2 
-
- exit 
- ```
-
-Login again to Spider and inspect what environment variables have been set up
-
- ```sh
- cat $HOME/.bashrc
- ```
-
-#### 2.3 Variant calling tools installation
-
-Follow the further instructions for the installation of individual tools
-
- ```sh
- cd /project/spidercourse/Software/ (or cd $HOME if you are not a software manager)
-
- conda install -c bioconda fastqc=0.11.7=5
-
- conda install -c bioconda trimmomatic=0.38=0
-
- conda install -c bioconda bwa=0.7.17=ha92aebf_3
-
- conda install -c bioconda samtools=1.9=h8ee4bcc_1
-
- conda install -c bioconda bcftools=1.8=h4da6232_3 
- ```
- 
-> **_Food for brain:_**
->
-> * Do you know where the above pacakages are installed? How do you test if the installation was successful?
-
-```sh
-cp /scratch/libcrypto.so.1.0.0 ecoli-analysis-software/miniconda2/lib/
-```
-
-### <a name="spider-dm"></a> 3. Data management
-
-#### 3.1 Data manager Role
+#### 2.1 Data manager Role
 
  ```sh
  id $USER
@@ -110,18 +37,25 @@ cp /scratch/libcrypto.so.1.0.0 ecoli-analysis-software/miniconda2/lib/
  mkdir /project/spidercourse/Data/mydata
  ```
  
-Although you may not have write permissions in the project Data folder, all users still have read permissions. This means you can share data without worrying about someone else accidentally deleting the data for the project.
+What happened? As you are not a data manager, you do not have write permissions in the project's Data directory. However, all users still have read permissions. This means data can be shared within the project without worrying about someone accidentally deleting/overwriting the data for the project.
 
 
-#### 3.2 Data download
+#### 2.2 Data download
 
 Let us download some data that we will use later to run jobs on the cluster. The data we are going to use is part of a long-term evolution experiment led by [Richard Lenski](https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment) to assess adaptation in E. coli. A population was propagated for more than 50,000 generations in a glucose-limited minimal medium. We will be working with three sample events from the Ara-3 strain of this experiment, one from 5,000 generations, one from 15,000 generations, and one from 50,000 generations. 
 
 Let us download the paired-end data from [European Nucleotide Archive](https://www.ebi.ac.uk/ena).
 
  ```sh
+ 
+ #As data manager
  mkdir -p /project/spidercourse/Data/ecoli-analysis/data/untrimmed_fastq/
  cd /project/spidercourse/Data/ecoli-analysis/data/untrimmed_fastq/
+ 
+ #As a regular user
+ 
+ mkdir -p $HOME/ecoli-analysis/data/untrimmed_fastq/
+ cd $HOME/ecoli-analysis/data/untrimmed_fastq/
 
  curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz
  curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz
@@ -134,14 +68,104 @@ Let us download the paired-end data from [European Nucleotide Archive](https://w
 Let us also download the reference genome for E. coli REL606.
 
  ```sh
+ #As data manager
  cd /project/spidercourse/Data/ecoli-analysis/data
  mkdir ref_genome
  cd ref_genome
+ 
+ #As a regular user
+ cd $HOME/ecoli-analysis/data
+ mkdir ref_genome
+ cd ref_genome
+ 
  curl -L -o ecoli_rel606.fasta.gz ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/017/985/GCA_000017985.1_ASM1798v1/GCA_000017985.1_ASM1798v1_genomic.fna.gz
  gunzip ecoli_rel606.fasta.gz
  ```
 
-You may also download the above data in your $HOME directory instead of project Data space. However, please note that for running the examples today the paths defined in the workflows expect the data to be in the project Data space. You will need to modify all the paths in the further scripts if you download the data in your $HOME.
+### <a name="job-submit"></a> 3. Software management
+
+#### 3.1 Software manager Role
+
+ ```sh
+ id $USER
+ ```
+ 
+> **_Food for brain:_**
+>
+> * Are you a software manager? If not, do you know who is the software manager?
+
+ ```sh
+ getent group spidercourse-sw
+ getent group spidercourse-user
+ mkdir /project/spidercourse/Software/mysoftware
+ ```
+ 
+What happened? As you are not a Software manager, you do not have write permissions in the project's Software directory. However, all users still have read permissions. This means that you or one of your colleagues can install complicated software and the dependencies, maintain it, and all project users can use that uniformly. This makes life easier and is crucial for reproducability of your results. Also apart from project wide software, individual users can use their own software (or different versions). 
+
+#### 3.2 Miniconda installation
+
+We will use Miniconda; it is a package manager. We shall first install miniconda2 and then proceed to the installation of individual tools. Below are two set of instructions - one for Sfotware manager and one for regular user. 
+
+ ```sh
+ #As Software manager
+ cd /project/spidercourse/Software/ 
+ 
+ #As a regular user
+ cd $HOME
+ 
+ wget https://repo.continuum.io/miniconda/Miniconda2-4.6.14-Linux-x86_64.sh
+ bash Miniconda2-4.6.14-Linux-x86_64.sh
+ ```
+
+It will ask you for an installation path. 
+
+ ```sh
+ #As a software manager
+ /project/spidercourse/Software/ecoli-analysis-software/miniconda2 
+
+ #As a regular user
+ $HOME/ecoli-analysis-software/miniconda2 
+
+ exit 
+ ```
+
+We will see later how Software installed in the Software project space can be used by all users. If you installed it in your $HOME directoy, other users in the project cannot access it (unless you open up permissions which is NOT recommended). Login again to Spider and inspect what environment variables have been set up
+
+ ```sh
+ cat $HOME/.bashrc
+ ```
+
+#### 3.3 Variant calling tools installation
+
+Follow the further instructions for the installation of individual tools
+
+ ```sh
+  #As Software manager
+ cd /project/spidercourse/Software/ecoli-analysis-software 
+ 
+ #As a regular user
+ cd $HOME
+ 
+ conda install -c bioconda fastqc=0.11.7=5
+
+ conda install -c bioconda trimmomatic=0.38=0
+
+ conda install -c bioconda bwa=0.7.17=ha92aebf_3
+
+ conda install -c bioconda samtools=1.9=h8ee4bcc_1
+
+ conda install -c bioconda bcftools=1.8=h4da6232_3 
+ ```
+ 
+> **_Food for brain:_**
+>
+> * Do you know where the above pacakages are installed? How do you test if the installation was successful? #Hint - try running one of the above installed software
+
+```sh
+cp /scratch/libcrypto.so.1.0.0 ecoli-analysis-software/miniconda2/lib/
+```
+
+
 
 #### 3.3 Data cleanup
 
