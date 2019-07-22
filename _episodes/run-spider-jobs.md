@@ -41,7 +41,7 @@ cat job-submit-variant-calling.sh
 #!/bin/bash
 #SBATCH -c 1
 #SBATCH --constraint=skylake
-time bash /project/spidercourse/Data/ecoli-analysis/run_variant_calling.sh 
+bash /project/spidercourse/Data/ecoli-analysis/run_variant_calling.sh 
 ```
 
 This script in turn calls another script that will run the variant calling. Let us inspect those steps
