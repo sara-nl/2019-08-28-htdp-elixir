@@ -55,7 +55,7 @@ It will ask you for an installation path. If you are not a software manager you 
  or 
 
  #Please provide the following path for installation as a regular user
- $HOME/ecoli-analysis-software
+ $HOME/ecoli-analysis-software/miniconda2 
 
  exit 
  ```
