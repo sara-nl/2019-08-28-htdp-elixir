@@ -35,9 +35,11 @@ Familiarize yourself with your environment :
 
 #### 3.1 Submit a simple job 
 
-Inspect the script my-first-job.sh:
+Let us download our first job sacript and inspect it:
   
  ```sh
+ wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/blob/gh-pages/_episodes/scripts/my-first-job.sh
+ 
  cat my-first-job.sh
  
  #!/bin/bash
