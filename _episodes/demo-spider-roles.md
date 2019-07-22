@@ -89,7 +89,7 @@ Follow the further instructions for the installation of individual tools
 > * Do you know where the above pacakages are installed? How do you test if the installation was successful?
 
 ```sh
-cp /scratch/libcrypto.so.1.0.0 ecoli-analysis-software/miniconda3/lib/
+cp /scratch/libcrypto.so.1.0.0 ecoli-analysis-software/miniconda2/lib/
 ```
 
 ### <a name="spider-dm"></a> 3. Data management
