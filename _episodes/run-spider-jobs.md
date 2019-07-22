@@ -98,3 +98,8 @@ squeue -u $USER
 ```
 
 To do - The above will fail as the output will still be written to Data folders. Introduce the Shared space or make them do it in home. Introduce the 'overwrite in share' space errors and then indicate the correct paths
+
+extras
+--check if tmpdir performs with a significant difference
+--they can run the full example if they are ready
+
