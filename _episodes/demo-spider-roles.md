@@ -168,6 +168,7 @@ Let us inspect what steps we follow in the data trimming
 ```sh
 cat data_qc.sh 
 
+#!/bin/bash
 set -e
 ecolipath=/project/spidercourse/Data/ecoli-analysis
 
