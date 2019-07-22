@@ -41,7 +41,7 @@ Familiarize yourself with your environment :
 To install software for the project users, you should be a software manager. We will use Miniconda which is a package manager that simplifies the installation process. Please first install miniconda3 and then proceed to the installation of individual tools.
 
  ```sh
- cd /project/spidercourse/Software/
+ cd /project/spidercourse/Software/ (or cd $HOME if you are not a software manager)
  wget https://repo.continuum.io/miniconda/Miniconda2-4.6.14-Linux-x86_64.sh
  bash Miniconda2-4.6.14-Linux-x86_64.sh
  ```
@@ -71,6 +71,8 @@ Login again to Spider and inspect what environment variables have been set up
 Follow the further instructions for the installation of individual tools
 
  ```sh
+ cd /project/spidercourse/Software/ (or cd $HOME if you are not a software manager)
+
  conda install -c bioconda fastqc=0.11.7=5
 
  conda install -c bioconda trimmomatic=0.38=0
