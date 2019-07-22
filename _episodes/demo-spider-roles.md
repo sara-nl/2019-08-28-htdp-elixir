@@ -183,9 +183,11 @@ nano $HOME/.bashrc
 
 # >>> conda initialize >>>
 
+current path in your file 
+
 $HOME/ecoli-analysis-software/miniconda2/bin/conda 
 
-to 
+replace this with the following path instead
 
 /project/spidercourse/Software/ecoli-analysis-software/miniconda2/bin/conda
 
@@ -218,8 +220,8 @@ cd /project/spidercourse/Data/ecoli-analysis/
 # As a regular user
 cd $HOME/ecoli-analysis
 
-copy the job-submit-script from github here
-
+wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/gh-pages/_episodes/scripts/job-submit-datatrimming.sh
+ 
 cat job-submit-datatrimming.sh
 
 #!/bin/bash
@@ -236,6 +238,8 @@ bash $HOME/ecoli-analysis/data_qc.sh
 Let us inspect what steps we follow in the data trimming
 
 ```sh
+wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/gh-pages/_episodes/scripts/data_qc.sh
+
 cat data_qc.sh 
 
 #!/bin/bash
