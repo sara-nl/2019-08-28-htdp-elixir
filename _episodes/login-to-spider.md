@@ -50,7 +50,7 @@ Inspect the script my-first-job.sh:
  -t: max total run time of the job, here it is 10 minutes  
  -c: 1 core requested
  
-Now that you have inspected the script that will submit your job, let's submit a job by running the following command:
+Now that you have inspected the script that will submit your job, let's submit it running the following command:
   
  ```sh
  sbatch my-first-job.sh  #This command will submit a job and give you a job ID in return
