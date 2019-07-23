@@ -29,6 +29,9 @@ Our variant calling workflow has the following steps:
 #As data manager
 cd /project/spidercourse/Data/ecoli-analysis/
 
+# As a regular user
+cd $HOME/ecoli-analysis/
+
 mkdir results
 wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/gh-pages/_episodes/scripts/job-submit-variant-calling.sh
 ```
@@ -44,11 +47,20 @@ cat job-submit-variant-calling.sh
 bash /project/spidercourse/Data/ecoli-analysis/run-variant-calling.sh 
 ```
 
-This script in turn calls another script that will run the variant calling. Let us inspect those steps
+The job script in turn calls another script that will run the variant calling. Let us dwonload that script first
 
 ```sh
 wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/gh-pages/_episodes/scripts/run-variant-calling.sh
+```
 
+Let us submit the job first and then inspect the script while the job runs
+
+```sh
+sbatch --job-name=var-call -J 'var-call' --output=%x-%j.out job-submit-variant-calling.sh
+squeue -u $USER
+```
+
+```sh
 cat run-variant-calling.sh
 
 #!/bin/bash
