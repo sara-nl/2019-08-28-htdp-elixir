@@ -54,7 +54,6 @@ Let us download the paired-end data from [European Nucleotide Archive](https://w
  cd /project/spidercourse/Data/ecoli-analysis/data/untrimmed_fastq/
  
  #As a regular user
- 
  mkdir -p $HOME/ecoli-analysis/data/untrimmed_fastq/
  cd $HOME/ecoli-analysis/data/untrimmed_fastq/
 
