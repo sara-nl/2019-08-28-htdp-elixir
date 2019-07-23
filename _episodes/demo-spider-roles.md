@@ -120,6 +120,12 @@ We will use Miniconda; it is a package manager. We shall first install miniconda
 It will ask you for an installation path. 
 
  ```sh
+ answer yes 
+ ```
+
+It will ask you for an installation path. 
+
+ ```sh
  #As a software manager
  /project/spidercourse/Software/ecoli-analysis-software/miniconda2 
 
