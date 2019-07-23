@@ -12,3 +12,4 @@ squeue
 echo ""
 echo "You just ran your first job on" $HOSTNAME " with a job ID " $SLURM_JOBID
 echo ""
+sleep 10s
