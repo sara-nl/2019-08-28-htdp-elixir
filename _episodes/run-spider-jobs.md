@@ -53,14 +53,12 @@ The job script in turn calls another script that will run the variant calling. L
 wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/gh-pages/_episodes/scripts/run-variant-calling.sh
 ```
 
-Let us submit the job first and then inspect the script while the job runs
+Let us submit the job first and then inspect the steps while the job runs
 
 ```sh
 sbatch --job-name=var-call -J 'var-call' --output=%x-%j.out job-submit-variant-calling.sh
 squeue -u $USER
-```
 
-```sh
 cat run-variant-calling.sh
 
 #!/bin/bash
@@ -102,11 +100,47 @@ for fq1 in $ecolipath/data/trimmed_fastq_small/*_1.trim.sub.fastq
     done
 ```
 
-Let us submit the job
+Let us see if the job is running and what it is doing. You can inspect the output log file even if the job is not completed. 
+
+```sh
+squeue -u $USER
+cat var-call-jobid.out #replace the jobid with your jobid 
+```
+
+You probably received an error that says
+
+```sh
+[bwa_index] Pack FASTA... [bns_fasta2bntseq] fail to open file '/project/spidercourse/Data/ecoli-analysis/data/ref_genome/ecoli_rel606.fasta.pac' : Permission denied
+```
+
+> **_Food for brain:_**
+>
+> * This error indicates that it failed to open a file, do you know why? Hint: check if such a file exists in this path
+> * The project Data folder path is provided in the script, check the path $HOME/ecoli-analysis/data/ref_genome/ and you can see that no such file exists. So what is going on? Why is it trying to open this file?
+
+The bwa tool is trying to create the file ecoli_rel606.fasta.pac in the Data project space where as you know you do not have write permissions. How can you fix this? Try the following:
+
+```sh
+In the run-variant-calling.sh script replace the path
+
+ecolipath=/project/spidercourse/Data/ecoli-analysis
+
+to
+
+ecolipath=$HOME/ecoli-analysis
+```
+
+And run the job again
 
 ```sh
 sbatch --job-name=var-call -J 'var-call' --output=%x-%j.out job-submit-variant-calling.sh
 squeue -u $USER
+```
+So did the job run properly this time? Check the log file
+
+```sh
+squeue -u $USER
+cat var-call-jobid.out #replace the jobid with your jobid 
 ```
 
 To do - The above will fail as the output will still be written to Data folders. Introduce the Shared space or make them do it in home. Introduce the 'overwrite in share' space errors and then indicate the correct paths
