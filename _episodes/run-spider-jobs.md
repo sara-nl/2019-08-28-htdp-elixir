@@ -169,17 +169,37 @@ cat var-call-jobid.out #replace the jobid with your jobid
 ```
 You can see that now the job runs properly which is great.
 
-### <a name="share-data"></a> 3. Sharing results in a project
-
 > **_Food for brain:_**
 >
 > * Often in a project you want to share results with your colleagues. Your $HOME is not accessible to other members in the project so how would you share the results? Hint: check the folders in your /project/spidercourse directory
 > * Do you have write access to such a folder? Do all project members have read and write access to a common folder?
 
+### <a name="share-data"></a> 3. Sharing results in a project
 
+You have already been introduced to the Data and Software project spaces and the associated roles. A shared Data folder reduces unnecessary replicas of the same data, and having a manager to handle the data reduces the risk of accidental removal. However, you also need a space where the results can be shared and the benefits are twofold - not everyone needs to run the same analysis (and co-ordinate on how this can be done uniformly) and the results can be used for post processing without the hassle of transfering the data to each other. This functionality is provided by the Shared project space.
 
+```sh
+cd /project/spidercourse/Share
+mkdir my-results
+ls -l
+```
 
-To do - The above will fail as the output will still be written to Data folders. Introduce the Shared space or make them do it in home. Introduce the 'overwrite in share' space errors and then indicate the correct paths
+> **_Food for brain:_**
+>
+> * So you created this folder but looks like someone else became the owner. Any idea why? Hint: This is a "Shared" directory.
+> * Can you delete the directories/files not owned by you?
+
+So the etiquette to keep in mind when using the Share folder is that you can acidentally delete/overwrite someone else's
+results and vice versa, or the results of your entire project. So be careful!
+ 
+```sh
+cd /project/spidercourse/Share
+mkdir $USER-results
+ls -l
+```
+
+You may copy your results to the folder you created above or rerun the analysis by defining paths to the Share folder.
+
 
 extras
 --check if tmpdir performs with a significant difference
