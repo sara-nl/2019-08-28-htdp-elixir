@@ -168,7 +168,7 @@ Follow the further instructions for the installation of individual tools
 > * Do you know where the above pacakages are installed? How do you test if the installation was successful? #Hint - try running one of the above installed software
 
 ```sh
-fastqc -h       (runs quality control checks on raw sequence data)
+fastqc -h       (fastqc runs quality control checks on raw sequence data and with the -h flag it displays the help for this task)
 
 trimmomatic     (data trimming tool)
 
