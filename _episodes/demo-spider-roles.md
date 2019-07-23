@@ -208,7 +208,7 @@ bcftools
 
 echo $PATH
 ```
-As you can see the error is resolved and you can proceed to running the analysis. Just sop you know in this particular case it was a simple solution, the missing library was downloaded to Spider and copied as follows: 
+As you can see the error is resolved and you can proceed to running the analysis. Just so you know in this particular case it was a simple solution, the missing library was downloaded to Spider and copied as follows: 
 
 ```sh
 cp /scratch/libcrypto.so.1.0.0 ecoli-analysis-software/miniconda2/lib/
