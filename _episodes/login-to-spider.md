@@ -28,7 +28,7 @@ Familiarize yourself with your environment :
 > **_Food for brain:_**
 >
 > * What does the output of the command "id $USER" tell you?
-> * How many worker nodesd are available on the cluster?
+> * How many worker nodes are available on the cluster?
 
 
 ### <a name="job-submit"></a> 3. Submit your first job
