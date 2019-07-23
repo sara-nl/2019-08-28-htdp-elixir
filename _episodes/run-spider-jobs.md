@@ -121,6 +121,15 @@ You probably received an error that says
 The bwa tool is trying to create the file ecoli_rel606.fasta.pac in the Data project space where as you know you do not have write permissions. How can you fix this? Try the following:
 
 ```sh
+In the job-submit-variant-calling.sh script replace the following line 
+
+bash /project/spidercourse/Data/ecoli-analysis/run-variant-calling.sh 
+
+to
+
+bash $HOME/ecoli-analysis/run-variant-calling.sh 
+
+-----------------
 In the run-variant-calling.sh script replace the path
 
 ecolipath=/project/spidercourse/Data/ecoli-analysis
