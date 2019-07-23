@@ -1,5 +1,13 @@
 # Running jobs on Spider
 
+
+1. [Set up job enviromment](#job-setup)
+2. [Run variant calling](#run-var-call)
+3. [Handling errors](#error-handling)
+4. [Sharing results in a project](#share-data)
+
+### <a name="spider-spaces"></a> 1. Set up job environment
+
 We will download a set of trimmed FASTQ files to work with. These are small subsets of our real trimmed data we prepared earlier, and will enable us to run our variant calling workflow quite quickly. Later on if you have more time, you can try using the full data.
 
 ```sh
@@ -52,6 +60,7 @@ The job script in turn calls another script that will run the variant calling. L
 ```sh
 wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/gh-pages/_episodes/scripts/run-variant-calling.sh
 ```
+### <a name="run-var-call"></a> 2. Run variant calling jobs
 
 Let us submit the job first and then inspect the steps while the job runs
 
@@ -106,6 +115,7 @@ Let us see if the job is running and what it is doing. You can inspect the outpu
 squeue -u $USER
 cat var-call-jobid.out #replace the jobid with your jobid 
 ```
+### <a name="error-handling"></a> 3. Handling errors
 
 You probably received an error that says
 
@@ -118,23 +128,29 @@ You probably received an error that says
 > * This error indicates that it failed to open a file, do you know why? Hint: check if such a file exists in this path
 > * The project Data folder path is provided in the script, check the path $HOME/ecoli-analysis/data/ref_genome/ and you can see that no such file exists. So what is going on? Why is it trying to open this file?
 
-The bwa tool is trying to create the file ecoli_rel606.fasta.pac in the Data project space where as you know you do not have write permissions. How can you fix this? Try the following:
+The bwa tool is trying to create the file ecoli_rel606.fasta.pac in the Data project space where as you know you do not have write permissions. How can you fix this? 
+
+1. Fix paths in job-submit-variant-calling.sh
 
 ```sh
-In the job-submit-variant-calling.sh script replace the following line 
+#In the job-submit-variant-calling.sh script replace the following line 
 
 bash /project/spidercourse/Data/ecoli-analysis/run-variant-calling.sh 
 
-to
+#to
 
 bash $HOME/ecoli-analysis/run-variant-calling.sh 
+```
 
------------------
-In the run-variant-calling.sh script replace the path
+2. Fix paths in run-variant-calling.sh 
+
+```sh
+
+#In the run-variant-calling.sh script replace the path
 
 ecolipath=/project/spidercourse/Data/ecoli-analysis
 
-to
+#to
 
 ecolipath=$HOME/ecoli-analysis
 ```
@@ -151,6 +167,17 @@ So did the job run properly this time? Check the log file
 squeue -u $USER
 cat var-call-jobid.out #replace the jobid with your jobid 
 ```
+You can see that now the job runs properly which is great.
+
+### <a name="share-data"></a> 3. Sharing results in a project
+
+> **_Food for brain:_**
+>
+> * Often in a project you want to share results with your colleagues. Your $HOME is not accessible to other members in the project so how would you share the results? Hint: check the folders in your /project/spidercourse directory
+> * Do you have write access to such a folder? Do all project members have read and write access to a common folder?
+
+
+
 
 To do - The above will fail as the output will still be written to Data folders. Introduce the Shared space or make them do it in home. Introduce the 'overwrite in share' space errors and then indicate the correct paths
 
