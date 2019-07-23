@@ -117,10 +117,10 @@ We will use Miniconda; it is a package manager. We shall first install miniconda
  bash Miniconda2-4.6.14-Linux-x86_64.sh
  ```
 
-It will ask you for an installation path. 
+It will ask you for an installation path. (please answer yes)
 
  ```sh
- answer yes 
+ yes 
  ```
 
 It will ask you for an installation path. 
