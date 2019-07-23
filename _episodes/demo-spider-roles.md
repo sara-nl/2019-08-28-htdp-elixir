@@ -174,7 +174,7 @@ trimmomatic     (data trimming tool)
 
 bwa             (maps DNA sequences against reference genome)
 
-samtools.       (utility for manipulating data in the SAM format)
+samtools       (utility for manipulating data in the SAM format)
 
 bcftools        (variant calling tool)
 ```
