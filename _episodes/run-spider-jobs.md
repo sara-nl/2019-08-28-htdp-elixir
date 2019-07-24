@@ -198,10 +198,18 @@ mkdir $USER-results
 ls -l
 ```
 
-You may copy your results to the folder you created above or rerun the analysis by defining paths to the Share folder.
+You may copy your results to the folder you created above to share the results with your colleagues
 
+```sh
+cd /project/spidercourse/Share/$USER-results
+cp -r $HOME/ecoli-analysis/results .
+```
 
-extras
---check if tmpdir performs with a significant difference
---they can run the full example if they are ready
+You can also avoid having to copy results back and forth by running the analysis in the Share folder. 
+
+> **_Food for brain:_**
+>
+> * What paths need to be changed for the analysis to write the output in Share folder?
+> * How can you make sure you don't accidentally overwrite someone else's/your own results? 
+
 
