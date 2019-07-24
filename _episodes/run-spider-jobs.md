@@ -212,4 +212,6 @@ You can also avoid having to copy results back and forth by running the analysis
 > * What paths need to be changed for the analysis to write the output in Share folder?
 > * How can you make sure you don't accidentally overwrite someone else's/your own results? 
 
+View the output results with samtools - add this part
+
 There are some extra examples [here](https://github.com/sara-nl/2019-08-28-htdp-elixir/blob/gh-pages/_episodes/extras/extras.md) if you have already finished the previous examples and would like to explore more.
