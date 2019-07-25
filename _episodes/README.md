@@ -34,4 +34,4 @@ Anyone who wants to start processing large data volumes (tens to hundreds of ter
 
 15:15 - [Running data analysis and using collaboration features](https://github.com/sara-nl/2019-08-28-htdp-elixir/blob/gh-pages/_episodes/run-spider-jobs.md)
 
-16:15 - More demos of additional features and Wrap up
+16:15 - Additional features on the platform and conclusion
