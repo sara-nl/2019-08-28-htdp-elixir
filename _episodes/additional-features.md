@@ -4,3 +4,4 @@
 2. Jupyter notebooks
 3. Infinite partition
 4. External storage access and services
+5. Softdrive
