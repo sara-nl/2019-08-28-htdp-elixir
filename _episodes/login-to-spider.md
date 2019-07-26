@@ -35,7 +35,7 @@ Familiarize yourself with your environment :
 
 #### 3.1 Submit a simple job 
 
-Let us download our first job sacript and inspect it:
+Let us download our first job script and inspect it:
   
  ```sh
  wget https://raw.githubusercontent.com/sara-nl/2019-08-28-htdp-elixir/gh-pages/_episodes/scripts/my-first-job.sh
@@ -45,14 +45,12 @@ Let us download our first job sacript and inspect it:
  #!/bin/bash
  #SBATCH -t 10:00
  #SBATCH -c 1
- #SBATCH -p normal
  sinfo
- sbatch
+ squeue
  echo "You just ran your first job on" $HOSTNAME " with a job ID " $SLURM_JOBID
  ```
  -t: max total run time of the job, here it is 10 minutes  
  -c: 1 core requested 
- -p: normal partition
  
 Now that you have inspected the script that will submit your job, let's submit it running the following command:
   
