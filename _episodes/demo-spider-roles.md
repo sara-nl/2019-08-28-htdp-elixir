@@ -9,16 +9,15 @@
 
 #### 1.1 Project environment
 
-Familiarize yourself with your environment :
+Each project on Spider gets its own project space. Let us get familiar with this environment :
 
  ```sh
  ls /project 
  ```
 > **_Food for brain:_**
 >
-> * Do you know what project you belong to? Hint: id $USER
-> * What all access does it provide to you?
-> * What are each of the project directories for? What is public/private? Do you have read write permissions on all spaces?
+> * Do you know what project you belong to? Hint: Combine the information from the commands "whoami" and "ls /project"
+> * What are each of the project directories for? What is public/private? Do you have read and write permissions on all spaces?
 
 ### <a name="spider-dm"></a> 2. Data management
 
@@ -27,33 +26,38 @@ Familiarize yourself with your environment :
  ```sh
  id $USER
  ```
- 
+
 > **_Food for brain:_**
 >
 > * Are you a data manager? If not, do you know who is the data manager?
 
+Let us use come handy commands that can tell you which 'groups' different users belong to.
+
  ```sh
  getent group spidercourse-data
  getent group spidercourse-user
+ ```
+ Which group does your username belong to? And which one does it not belong to?
+ 
+ ```sh
  mkdir /project/spidercourse/Data/mydata
  ```
  
-What happened? As you are not a data manager, you do not have write permissions in the project's Data directory. However, all users still have read permissions. This means data can be shared within the project without worrying about someone accidentally deleting/overwriting the data for the project.
-
+What happened? As you are not a data manager (so not a part of spider_data group) but a user (part of spider_user group), you do not have write permissions in the project's Data directory. However, all users have read permissions. This means data is managed by a managder and can be shared within the project without worrying about someone accidentally deleting/overwriting the data for the project.
 
 #### 2.2 Data download
 
-Let us download some data that we will use later to run jobs on the cluster. The data we are going to use is part of a long-term evolution experiment led by [Richard Lenski](https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment) to assess adaptation in E. coli. A population was propagated for more than 50,000 generations in a glucose-limited minimal medium. We will be working with three sample events from the Ara-3 strain of this experiment, one from 5,000 generations, one from 15,000 generations, and one from 50,000 generations to study how the population changed. 
+Let us download some data that we will use later to run jobs on Spider. The data we are going to use is part of a long-term evolution experiment led by [Richard Lenski](https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment) to assess adaptation in E. coli. A population was propagated for more than 50,000 generations in a glucose-limited minimal medium. We will be working with three sample events from the Ara-3 strain of this experiment, one from 5,000 generations, one from 15,000 generations, and one from 50,000 generations to study how the population changed. 
 
-Let us download the paired-end data from [European Nucleotide Archive](https://www.ebi.ac.uk/ena).
+Let us download the paired-end data from [European Nucleotide Archive](https://www.ebi.ac.uk/ena). Below are two set of instructions - one for Data manager and one for regular user.
 
  ```sh
  
- #As data manager
+ #As Data manager
  mkdir -p /project/spidercourse/Data/ecoli-analysis/data/untrimmed_fastq/
  cd /project/spidercourse/Data/ecoli-analysis/data/untrimmed_fastq/
  
- #As a regular user
+ #As regular user
  mkdir -p $HOME/ecoli-analysis/data/untrimmed_fastq/
  cd $HOME/ecoli-analysis/data/untrimmed_fastq/
 
@@ -68,12 +72,12 @@ Let us download the paired-end data from [European Nucleotide Archive](https://w
 Let us also download the reference genome for E. coli REL606.
 
  ```sh
- #As data manager
+ #As Data manager
  cd /project/spidercourse/Data/ecoli-analysis/data
  mkdir ref_genome
  cd ref_genome
  
- #As a regular user
+ #As regular user
  cd $HOME/ecoli-analysis/data
  mkdir ref_genome
  cd ref_genome
@@ -92,7 +96,7 @@ Let us also download the reference genome for E. coli REL606.
  
 > **_Food for brain:_**
 >
-> * Are you a software manager? If not, do you know who is the software manager?
+> * Are you a software manager? If not, do you know who is the software manager? 
 
  ```sh
  getent group spidercourse-sw
@@ -100,36 +104,37 @@ Let us also download the reference genome for E. coli REL606.
  mkdir /project/spidercourse/Software/mysoftware
  ```
  
-What happened? As you are not a Software manager, you do not have write permissions in the project's Software directory. However, all users still have read permissions. This means that you or one of your colleagues can install complicated software and the dependencies, maintain it, and all project users can use that uniformly. This makes life easier and is crucial for reproducability of your results. Also apart from project wide software, individual users can use their own software (or different versions). 
+What happened? As you are not a Software manager (so not a part of the spider_sw group), you do not have write permissions in the project's Software directory. However, all users still have read permissions. This means that you or one of your colleagues in this role can install complicated software and the dependencies, maintain it, and all project users can use that uniformly. This makes life easier and is crucial for reproducability of your results. Also, apart from project wide software, individual users can install their own software (or different versions) as you shall see below. 
 
 #### 3.2 Miniconda installation
 
-We will use Miniconda; it is a package manager. We shall first install miniconda2 and then proceed to the installation of individual tools. Below are two set of instructions - one for Sfotware manager and one for regular user. 
+We will use Miniconda; it is a package manager. We shall first install miniconda2 and then proceed to the installation of individual tools. Below are two set of instructions - one for Sotfware manager and one for regular user. 
 
  ```sh
  #As Software manager
  cd /project/spidercourse/Software/ 
  
- #As a regular user
+ #As regular user
  cd $HOME
  
  wget https://repo.continuum.io/miniconda/Miniconda2-4.6.14-Linux-x86_64.sh
  bash Miniconda2-4.6.14-Linux-x86_64.sh
  ```
 
-It will ask you for an installation path. (please answer yes)
+It will ask you 
 
  ```sh
- yes 
+ Do you accept the license terms? [yes|no]
+ yes # please answer yes to proceed further
  ```
 
 It will ask you for an installation path. 
 
  ```sh
- #As a software manager
+ #As Software manager
  /project/spidercourse/Software/ecoli-analysis-software/miniconda2 
 
- #As a regular user
+ #As regular user
  $HOME/ecoli-analysis-software/miniconda2 
 
  exit 
@@ -146,10 +151,10 @@ We will see later how Software installed in the Software project space can be us
 Follow the further instructions for the installation of individual tools
 
  ```sh
-  #As Software manager
+ #As Software manager
  cd /project/spidercourse/Software/ecoli-analysis-software 
  
- #As a regular user
+ #As regular user
  cd $HOME
  
  conda install -c bioconda fastqc=0.11.7=5
@@ -174,7 +179,7 @@ trimmomatic     (data trimming tool)
 
 bwa             (maps DNA sequences against reference genome)
 
-samtools       (utility for manipulating data in the SAM format)
+samtools        (utility for manipulating data in the SAM format)
 
 bcftools        (variant calling tool)
 ```
@@ -202,11 +207,11 @@ exit
 ```
 Now you are using the software environment that was set up by the Software manager.
 
-```sh
+```ss
+echo $PATH
+
 samtools
 bcftools
-
-echo $PATH
 ```
 As you can see the error is resolved and you can proceed to running the analysis. Just so you know in this particular case it was a simple solution, the missing library was downloaded to Spider and copied as follows: 
 
