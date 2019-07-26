@@ -1,6 +1,8 @@
 #!/bin/bash
 #SBATCH -t 10:00
 #SBATCH -c 1
+#SBATCH --constraint=skylake
+
 echo "Welcome to Spider"
 echo ""
 echo "The status of the worker nodes is as displayed below:"
