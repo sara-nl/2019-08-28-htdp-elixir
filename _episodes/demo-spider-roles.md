@@ -304,7 +304,7 @@ cd /project/spidercourse/Public/
 ls
 ```
 
-The Public directory is yet another project space that can be accessed by not only all Spider users but is open to anyone.  This public space is exposed to the web under the domain: https://public.spider.surfsara.nl/project/[PROJECTNAME]/. To view the files go to [https://public.spider.surfsara.nl/project/spidercourse/] link from the browser on your laptop. You can view one of the files in the ecoli-analhysis folder and study the quality of the data we have.
+The Public directory is yet another project space that can be accessed by not only all Spider users but is open to anyone.  This public space is exposed to the web under the domain: https://public.spider.surfsara.nl/project/[PROJECTNAME]/. To view the files go to https://public.spider.surfsara.nl/project/spidercourse/ link from the browser on your laptop. You can view one of the files in the ecoli-analhysis folder and study the quality of the data we have.
 
 The Public project space makes data sharing very easy and fast, particularly with your colleagues who are not a part of the project on Spider. 
 
