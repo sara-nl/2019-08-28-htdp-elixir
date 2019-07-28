@@ -78,7 +78,8 @@ cd $ecolipath/results
 
 genome=$ecolipath/data/ref_genome/ecoli_rel606.fasta
 
-bwa index $genome
+#index the reference genome
+bwa index $genome        
 
 mkdir -p sam bam bcf vcf
 
@@ -97,13 +98,23 @@ for fq1 in $ecolipath/data/trimmed_fastq_small/*_1.trim.sub.fastq
     raw_bcf=$ecolipath/results/bcf/${base}_raw.bcf
     variants=$ecolipath/results/bcf/${base}_variants.vcf
     final_variants=$ecolipath/results/vcf/${base}_final_variants.vcf 
-
+    
+    #Align reads to reference genome
     bwa mem $genome $fq1 $fq2 > $sam
+    
+    #Convert from sam to bam format
     samtools view -S -b $sam > $bam
+
+    #Sort the bam files    
     samtools sort -o $sorted_bam $bam 
-    samtools index $sorted_bam
+    
+    #Calculate the read coverage of positions in the genome
     bcftools mpileup -O b -o $raw_bcf -f $genome $sorted_bam
+    
+    #Detect the single nucleotide polymorphisms (SNPs)
     bcftools call --ploidy 1 -m -v -o $variants $raw_bcf 
+    
+    #Filter the SNPs for the final output in VCF format
     vcfutils.pl varFilter $variants > $final_variants
    
     done
@@ -212,6 +223,16 @@ You can also avoid having to copy results back and forth by running the analysis
 > * What paths need to be changed for the analysis to write the output in Share folder?
 > * How can you make sure you don't accidentally overwrite someone else's/your own results? 
 
-View the output results with samtools - add this part
+Once you have the results, lets see how many variants are in the vcf files
+
+```sh
+cd $HOME/ecoli-analysis
+grep -v "#" results/vcf/SRR2589044_final_variants.vcf | wc -l
+```
+
+> **_Food for brain:_**
+>
+> * How many variants are detected in each file? 
+> Solution: For SRR2589044 from generation 5000 there were 10 mutations, for SRR2584863 from generation 15000 there were 25 mutations, and SRR2584866 from generation 766 mutations. In the last generation, a hypermutable phenotype had evolved, causing this strain to have more mutations.
 
 There are some extra examples [here](https://github.com/sara-nl/2019-08-28-htdp-elixir/blob/gh-pages/_episodes/extras/extras.md) if you have already finished the previous examples and would like to explore more.
