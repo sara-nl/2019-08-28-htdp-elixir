@@ -198,7 +198,7 @@ mkdir $USER-results
 ls -l
 ```
 
-You may copy your results to the folder you created above to share the results with your colleagues
+You may copy your results to the folder you created above to share the results with your colleagues. Please check first if your job is finished, else you will copy partial results only.
 
 ```sh
 cd /project/spidercourse/Share/$USER-results
