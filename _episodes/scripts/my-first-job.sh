@@ -3,7 +3,9 @@
 #SBATCH -c 1
 #SBATCH --constraint=skylake
 
-echo "Welcome to Spider"
+echo "================================================================="
+echo "                        Welcome to Spider"
+echo "================================================================="
 echo ""
 echo "The status of the worker nodes is as displayed below:"
 sinfo
