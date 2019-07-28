@@ -190,7 +190,7 @@ ls -l
 > * Can you delete the directories/files not owned by you?
 
 So the etiquette to keep in mind when using the Share folder is that you can acidentally delete/overwrite someone else's
-results and vice versa, or the results of your entire project. So be careful!
+results and vice versa, or the entire results of your project. So be careful!
  
 ```sh
 cd /project/spidercourse/Share
