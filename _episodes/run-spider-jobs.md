@@ -235,4 +235,17 @@ grep -v "#" results/vcf/SRR2589044_final_variants.vcf | wc -l
 > * How many variants are detected in each file? 
 > * Solution: For SRR2589044 from generation 5000 there were 10 mutations, for SRR2584863 from generation 15000 there were 25 mutations, and SRR2584866 from generation 766 mutations. In the last generation, a hypermutable phenotype had evolved, causing this strain to have more mutations.
 
+Now that you finished your analysis for a small dataset, shall we see how much resources did you use on the cluster? You can use the following command to find this information:
+
+```sh
+sacct --format=JobID,JobName,AveCPU,Elapsed  # sacc displays accounting data for all jobs
+```
+
+> **_Food for brain:_**
+>
+> * What do these numbers indicate?
+> * How can you find more information about your jobs e.g., the maximum memory? Hint: add the flag "MaxRSS" in your query
+> * How much time do you estimate your typical workflow will take to run on Spider - at the moment it has 240 cores?
+> * How can your work benefit from running on Spider e.g., with project spaces, public views? In the enxt session we will demonstrate yet more features on Spider
+
 There are some extra examples [here](https://github.com/sara-nl/2019-08-28-htdp-elixir/blob/gh-pages/_episodes/extras/extras.md) if you have already finished the previous examples and would like to explore more.
