@@ -136,6 +136,13 @@ It will ask you for an installation path.
 
  #As regular user
  $HOME/ecoli-analysis-software/miniconda2 
+ ```
+ 
+ It will then ask you 
+ 
+ ```sh
+ Do you wish the installer to initialize Miniconda2 by running conda init? [yes|no]
+ yes # please answer yes
 
  exit 
  ```
@@ -193,19 +200,21 @@ nano $HOME/.bashrc
 
 # >>> conda initialize >>>
 
-current path in your file 
+replace the following path in your file 
 
-$HOME/ecoli-analysis-software/miniconda2/bin/conda 
+$HOME/ecoli-analysis-software/miniconda2/bin/conda
 
-replace this with the following path instead
+with the following path instead
 
 /project/spidercourse/Software/ecoli-analysis-software/miniconda2/bin/conda
+
+#Similarly change the other respective paths directing to the Software in project space
 
 save the changes
 
 exit 
 ```
-Now you are using the software environment that was set up by the Software manager.
+Now you are using the software environment that was set up by the Software manager. Login to Spider again.
 
 ```ss
 echo $PATH
