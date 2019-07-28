@@ -25,13 +25,23 @@ for fq1 in $ecolipath/data/trimmed_fastq_small/*_1.trim.sub.fastq
     raw_bcf=$ecolipath/results/bcf/${base}_raw.bcf
     variants=$ecolipath/results/bcf/${base}_variants.vcf
     final_variants=$ecolipath/results/vcf/${base}_final_variants.vcf 
-
+    
+    #Align reads to reference genome
     bwa mem $genome $fq1 $fq2 > $sam
+    
+    #Convert from sam to bam format
     samtools view -S -b $sam > $bam
+
+    #Sort the bam files    
     samtools sort -o $sorted_bam $bam 
-    samtools index $sorted_bam
+    
+    #Calculate the read coverage of positions in the genome
     bcftools mpileup -O b -o $raw_bcf -f $genome $sorted_bam
+    
+    #Detect the single nucleotide polymorphisms (SNPs)
     bcftools call --ploidy 1 -m -v -o $variants $raw_bcf 
+    
+    #Filter the SNPs for the final output in VCF format
     vcfutils.pl varFilter $variants > $final_variants
    
     done
