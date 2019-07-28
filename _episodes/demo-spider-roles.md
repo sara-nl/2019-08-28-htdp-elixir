@@ -17,7 +17,7 @@ Each project on Spider gets its own project space. Let us get familiar with this
 > **_Food for brain:_**
 >
 > * Do you know what project you belong to? Hint: Combine the information from the commands "whoami" and "ls /project"
-> * What are each of the project directories for? What is public/private? Do you have read and write permissions on all spaces? Hint: Does the command "echo "Hello world" > /project/spidercourse/hello-world.txt" create the file for you? Whast about in the sub-directories in /project/spidercourse/?
+> * What are each of the project directories for? What is public/private? Do you have read and write permissions on all spaces? Hint: Does the command "echo "Hello world" > /project/spidercourse/hello-world.txt" create the file for you? What about the directories in /project/spidercourse/?
 
 ### <a name="spider-dm"></a> 2. Data management
 
