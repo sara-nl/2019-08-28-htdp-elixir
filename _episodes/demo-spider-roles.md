@@ -147,7 +147,9 @@ It will ask you for an installation path.
  exit 
  ```
 
-We will see later how Software installed in the Software project space can be used by all users. If you installed it in your $HOME directory, other users in the project cannot access it (unless you open up permissions which is NOT recommended). Login again to Spider and inspect what environment variables have been set up
+We will see later how Software installed in the Software project space can be used by all users. If you installed it in your $HOME directory, other users in the project cannot access it (unless you open up permissions which is NOT recommended). 
+
+Login again to Spider and inspect what environment variables have been set up
 
  ```sh
  cat $HOME/.bashrc
