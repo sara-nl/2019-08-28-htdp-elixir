@@ -43,7 +43,7 @@ Let us use come handy commands that can tell you which 'groups' different users 
  mkdir /project/spidercourse/Data/mydata
  ```
  
-What happened? As you are not a data manager (so not a part of spider_data group) but a user (part of spider_user group), you do not have write permissions in the project's Data directory. However, all users have read permissions. This means data is managed by a manager and can be shared within the project without worrying about users accidentally deleting/overwriting the data for the project.
+What happened? As you are not a data manager (so not a part of spider_data group) but a user (part of spider_user group), you do not have write permissions in the project's Data directory. However, all users have read permissions. This means data is managed by a manager and can be shared within the project without worrying about regular users accidentally deleting/overwriting the data for the project.
 
 #### 2.2 Data download
 
