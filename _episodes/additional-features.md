@@ -5,3 +5,4 @@
 3. Infinite partition
 4. External storage access and services
 5. Softdrive
+6. Containers (try to run the same analysis with the container)
