@@ -2,6 +2,7 @@
 #SBATCH -t 10:00
 #SBATCH -c 1
 #SBATCH --constraint=skylake
+#SBATCH --reservation=spidercourse_2
 
 echo "================================================================="
 echo "                        Welcome to Spider"
