@@ -80,10 +80,15 @@ INTRODUCTION
 <hr/>
 
 <h2 id="general">General Information</h2>
+Do you have tens of hundreds of TBs of data that you want to process on a batch processing cluster
 
-Vastly increasing data volumes and data complexity imply that researchers require novel solutions to large scale cluster computing. This workshop aims to provide an introduction and
-hands-on experience with our new solution to this problem: "a new and versatile platform for high-throughput data processing".
-The objective of the workshop is to distinguish the different functionalities of the platform, to provide information on applying for access, and to give participants hands-on experience with basic job processing, software distribution and portability, using internal and external storage systems, and how to collaborate on data analysis within a project. Participants will acquire first hand experience with the flexibility, interactivity and interoperability offered by the  platform.
+ <ul style="list-style-type:circle;">
+  <li>in a uniform and reproducible manner  </li>
+  <li> with software that can be uniformly distributed  </li>
+  <li>and actively collaborate as well as share your results with your colleagues without having to transfer around data or reinstall software?  </li>
+</ul> 
+
+The objective of the workshop is to provide some hands-on experience on the upcoming <a href="http://doc.spider.surfsara.nl/en/latest/">Spider</a> platform with features designed to cater to such needs. If you are also curious in integrating additional functionalities such as containers, Jupyter Notebooks in your workflows, access external storage systems or would like to have your own cluster specifically tailored to your project needs, join us in Utrecht on August 28!
 
 {% comment %}
 AUDIENCE
