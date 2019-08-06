@@ -88,7 +88,7 @@ Do you have tens of hundreds of TBs of data that you want to process on a batch 
   <li>and actively collaborate as well as share your results with your colleagues without having to transfer around data or reinstall software?  </li>
 </ul> 
 
-The objective of the workshop is to provide some hands-on experience on the upcoming Spider platform with features designed to cater to such needs. If you are also curious in integrating additional functionalities such as containers, Jupyter Notebooks in your workflows, access external storage systems or would like to have your own cluster specifically tailored to your project needs, join us in Utrecht on August 28!
+The objective of the workshop is to provide some hands-on experience on the upcoming <a href="http://doc.spider.surfsara.nl/en/latest/">Spider</a> platform with features designed to cater to such needs. If you are also curious in integrating additional functionalities such as containers, Jupyter Notebooks in your workflows, access external storage systems or would like to have your own cluster specifically tailored to your project needs, join us in Utrecht on August 28!
 
 {% comment %}
 AUDIENCE
