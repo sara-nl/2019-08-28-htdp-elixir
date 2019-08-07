@@ -11,7 +11,7 @@ humandate: "Aug 28, 2019"    # human-readable dates for the workshop (e.g., "Feb
 humantime: "13:00 - 17:00 pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
 startdate: 2019-08-28      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2019-08-28      # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
-instructor: ["Maithili Kalamkar Stam (SURFsara)", "Natalie Danezi (SURFsara)"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+instructor: ["Maithili Kalamkar Stam (SURFsara)", "Raymond Oonk (SURFsara)", "Natalie Danezi (SURFsara)"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["Mateusz Kuzak (DTL)"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 email: ["mateusz.kuzak@dtls.nl","carlos.teijeiro@surfsara.nl","maithili.kalamkar-stam@surfsara.nl"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:             # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
@@ -80,7 +80,7 @@ INTRODUCTION
 <hr/>
 
 <h2 id="general">General Information</h2>
-Do you have petab of data that you want to process 
+Do you have tens to hundreds of TBs of data that you want to process 
 
  <ul style="list-style-type:circle;">
   <li>in a uniform and reproducible manner  </li>
